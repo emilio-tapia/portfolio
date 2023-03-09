@@ -3,7 +3,7 @@ import ButtonPrimary from "./ButtonPrimary.astro";
 
 const { time, name, description, url, dataColor, nameBgImg } = Astro.props
 
-const urlBgImg = `url("/public/images/${nameBgImg}")`
+const urlBgImg = `url("/images/${nameBgImg}")`
 ---
 
 <div class="card-color" data-card-color={dataColor}>
