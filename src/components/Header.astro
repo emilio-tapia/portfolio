@@ -1,0 +1,82 @@
+---
+import '../styles/hamburguer.scss';
+import { Icon } from 'astro-icon';
+import ButtonMenu from './ButtonMenu.astro';
+// import ButtonMenu from './ButtonMenu.svelte';
+
+
+let isMobile = true;
+---
+
+<header>
+
+    {isMobile ? 
+    <div class="header--wrapper">
+        <button class="header--darkModeSwitch" id="darkModeBtn">
+            <span aria-hidden="true">Dark Mode</span>
+            <Icon name="theme-dark" />
+        </button>
+        <ButtonMenu className="header--menuBtn" >
+            <span aria-hidden="true">Menu</span>
+            <Icon name="hamburguer" />
+        </ButtonMenu>
+    </div>
+    :
+    <div class="wrapper">
+        
+    </div>
+    }
+</header>
+
+<style lang="scss">
+
+    [astro-icon] {
+        fill: var(--text-color-100);
+        width: 44px;
+    }
+
+
+    header{
+        .header--wrapper{
+            display: grid;
+    place-content: end;
+    place-items: center;
+    grid-auto-flow: column;
+    gap: 0.5rem;
+    padding-block: 1rem;
+    margin-inline: var(--padding-inline-boundaries);
+        }
+        .header--darkModeSwitch{
+            place-content: center;
+            display: grid;
+            overflow: hidden;
+
+        }
+    }
+
+</style>
+
+<script>
+    let isDark = false;
+  
+    const setSelected = () => {
+      return isDark = !isDark;
+    }
+    
+    const changeDarkModeState = (element) => {
+      console.dir()
+      console.log(isDark)
+  
+          //   ? PORQUE NECESITA PONER UN STRING
+          if (!isDark) {
+            document.documentElement.attributes[1].value = 'light'
+          } else {
+            document.documentElement.attributes[1].value = 'dark'
+          }
+    }
+  
+    document.getElementById("darkModeBtn").addEventListener("click", (e) => {
+      setSelected()
+      changeDarkModeState(e.currentTarget)
+    });
+  </script>

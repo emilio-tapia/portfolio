@@ -1,0 +1,36 @@
+---
+const {className} = Astro.props
+---
+
+<button id="buttonMenu" class={className}
+aria-controls="primary-navigation"
+aria-expanded="false">
+    <slot/>
+</button>
+
+<script>
+  export let state = false;
+  export let className;
+
+  const setSelected = () => {
+    return state = !state;
+  }
+  
+  const changeStateAttribute = (element) => {
+    const currentState = element.getAttribute('data-state');
+
+        //   ? PORQUE NECESITA PONER UN STRING
+        if (!currentState || currentState === 'close') {
+        element.setAttribute('data-state', 'open');
+        element.setAttribute('aria-expanded', 'true');
+        } else {
+        element.setAttribute('data-state', 'close');
+        element.setAttribute('aria-expanded', 'false');
+        }
+  }
+
+  document.getElementById("buttonMenu").addEventListener("click", (e) => {
+    setSelected()
+    changeStateAttribute(e.currentTarget)
+  });
+</script>

@@ -1,0 +1,7 @@
+<svg class="hambuguer" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <g stroke="var(--button-color)" stroke-width="10" stroke-linecap="round" stroke-dasharray="80">
+        <line class="line top" x1="85" x2="15" y1="30" y2="30" stroke-dashoffset="0"></line>
+        <line class="line middle" x1="15" x2="85" y1="50" y2="50" stroke-dashoffset="0"></line>
+        <line class="line bottom" x1="85" x2="15" y1="70" y2="70" stroke-dashoffset="0"></line>
+    </g>
+</svg>

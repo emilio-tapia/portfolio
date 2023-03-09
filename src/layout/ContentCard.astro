@@ -1,0 +1,53 @@
+---
+import { Icon } from 'astro-icon';
+const {title, smallText, iconName} = Astro.props
+---
+
+<article>    
+    <div class="info--title-container">
+        <small>{smallText}</small>
+        <div class="info--title-flex">
+            <h5>{title}</h5>
+            <Icon name={iconName} />
+        </div>
+    </div>
+    <div class="info--description-container">
+        <slot/>
+    </div>
+</article>
+
+<style lang="scss">
+
+    .info--title-container{
+        background: var(--bg-card-white);
+        box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(13.5914px);
+        padding-inline: var(--padding-inline-boundaries);
+    }
+
+    .info--title-flex{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        [astro-icon] {
+        fill: var(--text-color-90);
+        opacity: .6;
+        width: 30px;
+        height: 100%;
+    }
+    }
+
+    small{
+        color: var(--text-color-90);
+        opacity: .6; 
+    }
+
+
+    .info--description-container{
+        display: grid;
+        padding-inline: var(--padding-inline-boundaries);
+        padding-block: 2rem;
+    }
+
+</style>

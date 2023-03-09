@@ -1,0 +1,55 @@
+---
+const summaryItems = [
+    'I am a frontend developer, graphic designer, music producer.',
+    'My passion transcends in looking for new possibilities to get better user experience.',
+    'I focus in human interactions with different media',
+    'I started my journey into the interactivity field in 2021.'
+]
+---
+
+<section class="summary">
+    <div class="summary--name">
+        <h2>Hello</h2>
+        <h3>How are you?</h3>
+    </div>
+    <ul class="summary--items">
+    {
+        summaryItems.map(item => 
+            <li>{item}</li>
+        )
+    }
+    </ul>
+
+</section>
+
+<style lang="scss">
+    .summary{
+        margin-block: 2rem;
+        display: grid;
+        gap: 2rem;
+        padding-inline: var(--padding-inline-boundaries);
+        padding-block: clamp(2rem, 10dvw, 5rem);
+    }
+
+    .summary--name{
+        text-transform: uppercase;
+        display: grid;
+        gap: 2rem;
+        
+
+        h2,h3{
+            line-height: .75;
+        }
+
+        h3{
+            font-weight: 400;
+            font-style: italic;
+        }
+    }
+
+    .summary--items{
+        display: grid;
+        gap: 0.8083rem;
+    }
+
+</style>

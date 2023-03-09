@@ -1,0 +1,189 @@
+---
+import ButtonBlog from "../../components/ButtonBlog.astro";
+import ContentCard from "../ContentCard.astro";
+import CardColor from "../../components/CardColor.astro";
+import CardSmall from "../../components/CardSmall.astro";
+---
+
+
+<section>
+    <ContentCard title="Studies" smallText="About my..." iconName="info-studies">
+        <div class="study">
+            <small>2014-2018</small>
+            <h6>Universidad San Francisco de Quito</h6>
+            <span>Bachelor in Musical Production and Sound</span>
+        </div>
+    </ContentCard>
+    <ContentCard title="Experience" smallText="About my..." iconName="info-experience">
+        <nav class="job-list">
+            <div class="job">
+                <span>2022-Present</span>
+            <h6>Comtelec Cia. Ltda.</h6>
+            <ul>
+                <li><span>Branding and design aesthetic area of the company.</span></li>
+                <li><span>UI/UX and front-end implementation of the webpage</span></li>
+            </ul>
+        </div>
+        <div class="job">
+                <span>2021-Present</span>
+            <h6>House of Modular Synth</h6>
+            <ul>
+                <li><span>Founder of the project.</span></li>
+                <li><span>Administration and logistics tasks</span></li>
+            </ul>
+        </div>
+        <div class="job">
+                <span>2018-2019</span>
+            <h6>Fundación Teatro Sucre</h6>
+            <ul>
+                <li><span>Helping in the sound area.</span></li>
+                <li><span>Administration and logistics tasks</span></li>
+            </ul>
+        </div>
+        </nav>
+    </ContentCard>
+    <ContentCard title="Skills" smallText="About my..." iconName="info-skills">
+        <div class="skill-container">
+            <div class="skill-group">
+                <h6>Hard Skills</h6>
+                <ul>
+                    <li><span>Web development</span></li>
+                    <li><span>App development</span></li>
+                    <li><span>Audiovisual production</span></li>
+                </ul>
+            </div>
+            <div class="skill-group">
+                <h6>Soft Skills</h6>
+                <ul>
+                    <li><span>Trabajo colectivo y bajo presión.</span></li>
+                    <li><span>Investigación y análisis.</span></li>
+                    <li><span>Organización y logística de proyectos. </span></li>
+                </ul>
+            </div>
+            <div class="skill-group">
+                <h6>Programming Skills</h6>
+                <ul>
+                    <li><span>HTML</span></li>
+                    <li><span>CSS/SCSS</span></li>
+                    <li><span>JS</span></li>
+                    <li><span>Svelte</span></li>
+                    <li><span>Astro</span></li>
+                    <li><span>Flutter</span></li>
+                </ul>
+            </div>
+        </div>
+    </ContentCard>
+    <ContentCard title="Projects" smallText="Te presentamos" iconName="info-studies">
+        <div class="projects--layout">
+            <CardColor 
+            time="2022-2023" 
+            name="Comtelec Web Page" 
+            description="Empresa de fibra optica / telecomunicaciones" 
+            url="https://www.comtelec.com/" 
+            dataColor="blue" 
+            nameBgImg="comtelec-card.png"/>
+            <CardColor 
+            time="2021-2023" 
+            name="House of Modular Synth" 
+            description="Sintetizadores al alcance de todos" 
+            url="https://www.instagram.com/houseofmodularsynthesizer/" 
+            dataColor="green"
+            nameBgImg="homs-card.jpg"/> 
+        </div>
+    </ContentCard>
+    <ContentCard title="Miniprojects" smallText="Te presentamos" iconName="info-studies">
+        <div class="miniprojects--layout">
+            <CardSmall 
+            nameBgImg="p5.png" 
+            dataColor="blue" 
+            url="https://codepen.io/emilio_ta/pen/OJvYdLz"/>
+            <CardSmall 
+            nameBgImg="p5-2.png" 
+            dataColor="green" 
+            url="https://codepen.io/emilio_ta/pen/ExEzrYx"/>
+            <CardSmall 
+            nameBgImg="p5.png" 
+            dataColor="blue" 
+            url="https://codepen.io/emilio_ta/pen/OJvYdLz"/>
+            <CardSmall 
+            nameBgImg="p5-2.png" 
+            dataColor="green" 
+            url="https://codepen.io/emilio_ta/pen/ExEzrYx"/>
+            <CardSmall 
+            nameBgImg="p5.png" 
+            dataColor="blue" 
+            url="https://codepen.io/emilio_ta/pen/OJvYdLz"/>
+            <CardSmall 
+            nameBgImg="p5-2.png" 
+            dataColor="green" 
+            url="https://codepen.io/emilio_ta/pen/ExEzrYx"/>
+        </div>
+    </ContentCard>
+    <ContentCard title="Blog" smallText="Te presentamos" iconName="info-studies">
+        <div class="blog--buttons">
+            <ButtonBlog title="Trick for CSS and SVG"/>
+            <ButtonBlog title="Trick for CSS and SVG"/>
+            <ButtonBlog title="Trick for CSS and SVG"/>
+        </div>
+    </ContentCard>
+</section>
+
+
+<style lang="scss">
+
+
+    section{
+        // background: linear-gradient(top, #EAEAE6 0%, #F3F3F2 100%);
+        // background-image: linear-gradient(top, red 0%, blue 100%);
+        background: var(--gradient-info-section)
+    }
+
+    .projects--layout{
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit,minmax(380px,1fr));
+    }
+
+    .miniprojects--layout{
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+    }
+
+    // .study{
+    //     display: grid;
+    //     gap: 0.5rem;
+    //     background: rgba(215, 255, 235, 0.1);
+    //     padding-inline: 1rem;
+    //     padding-block: 0.75rem;
+    //     box-shadow: 0px 3px 37px 2px rgba(0, 0, 0, 0.25);
+    // }
+
+    .job-list, .skill-container, .blog--buttons{
+        display: grid;
+        gap: 1rem;
+        // grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+    }
+
+    .job, .study, .skill-group{
+        display: grid;
+        align-content: start;
+        gap: 0.5rem;
+        background: rgba(255,255,255,0.1);
+        padding-inline: 1.25rem;
+        padding-block: 1rem;
+        box-shadow: 0px 3px 37px -8px rgba(0,0,0,0.25);
+        border-radius: 18px;
+
+        li{
+            list-style-type: disc;
+    list-style-position: inside;
+        }
+
+        // h5{
+        //     font-family: "SF Pro Text";
+        //     font-weight: bolder;
+        // }
+    }
+
+</style>

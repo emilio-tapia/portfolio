@@ -1,0 +1,91 @@
+---
+const talento = ['UI/UX', 'Front-end Developer', 'Sound Design', 'Audiovisual Production']
+// import { Image, Picture } from '@astrojs/image/components';
+const heroImg = '/images/hero.jpg'
+---
+<section class="hero">
+    <div class="hero--content">
+        <div class="hero--name">
+            <h1>Emilio</h1>
+            <h1>Tapia</h1>
+        </div>
+        <hr>
+        <ul>
+        {
+            talento.map(service => 
+                <li>{service}</li>
+            )
+        }
+        </ul>
+    </div>
+
+    <div class="iframe-wrapper">
+        <div class="dummy-padding"></div>
+        <picture data-element="hero-img">
+            <img src={heroImg} alt="hero" width="255" height="267">
+        </picture>
+      </div>
+
+
+
+</section>
+
+
+<style lang="scss">
+
+    .hero{
+        display: grid;
+        gap: 2rem;
+        padding-block: clamp(2rem, 10dvw, 5rem);
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+
+        &--content{
+            display: inherit;
+            gap: 2rem;
+        }
+    }
+
+    .hero > *:not(:last-child){
+        margin-inline: var(--padding-inline-boundaries);
+    }
+
+    .hero--name{
+        text-transform: uppercase;
+        display: grid;
+        gap: 2rem;
+
+        h1{
+            line-height: .75;
+        }
+    }
+
+
+    .iframe-wrapper {
+        width: max(65%, 15rem);
+        position: relative;
+        margin: 0 0 0 auto;
+        border-radius: 1rem 0 0 1rem;
+        overflow: hidden;
+
+        box-shadow: 
+        -1px 0px 1px 5px rgba(0,0,0,0.2),
+        -2px 0px 1px 10px rgba(0,0,0,0.1),
+        -3px 0px 1px 15px rgba(0,0,0,0.05),
+        -4px 0px 1px 20px rgba(0,0,0,0.025);
+
+        .dummy-padding {
+            padding-top: 106.25%;
+        }
+
+        img {
+            border: none;
+            width: 100%;
+            height: 100%;
+            inset: 0;
+            position: absolute;
+            object-fit: cover;
+            object-position: top;
+        }
+}
+
+</style>

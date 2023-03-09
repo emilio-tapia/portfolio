@@ -1,0 +1,69 @@
+.header--menuBtn {
+  --button-color: var(--text-color-100);
+
+  .top {
+    --rotation: -45deg;
+    transform-origin: 73px 39px;
+  }
+  .bottom {
+    --rotation: 45deg;
+    transform-origin: 75px 59px;
+  }
+
+  .middle {
+    transform-origin: center;
+    transition: 1s;
+  }
+
+  &[data-state='close'] {
+    :is(.top, .bottom) {
+      animation: open-icon 1s forwards;
+    }
+  }
+
+  &[data-state='open'] {
+    :is(.top, .bottom) {
+      animation: close-icon 1s forwards;
+    }
+
+    .middle {
+      transition: stroke-dashoffset 1s, opacity 0 1s;
+      stroke-dashoffset: 79;
+      opacity: 0;
+    }
+  }
+
+  @keyframes close-icon {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    40% {
+      stroke-dashoffset: 79.9;
+    }
+    60% {
+      stroke-dashoffset: 79.9;
+      rotate: var(--rotation);
+    }
+    100% {
+      stroke-dashoffset: 0;
+      rotate: var(--rotation);
+    }
+  }
+
+  @keyframes open-icon {
+    0% {
+      stroke-dashoffset: 0;
+      rotate: var(--rotation);
+    }
+    40% {
+      stroke-dashoffset: 79.9;
+      rotate: var(--rotation);
+    }
+    60% {
+      stroke-dashoffset: 79.9;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+}
