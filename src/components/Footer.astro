@@ -1,10 +1,11 @@
 ---
 import { Icon } from 'astro-icon';
+
 ---
 
 <footer>
-    <div class="footer--title">
-        <h2>Thanks <i><Icon name="footer-hand"/></i></h2>
+    <div class="footer--title" >
+        <h2>Thanks <i id="hand"><Icon name="footer-hand"/></i></h2>
         <h3>for your visit</h3>
     </div>
     <nav class="footer--nav">
@@ -12,23 +13,45 @@ import { Icon } from 'astro-icon';
             <li>
                 <p>Contact</p>
                 <ul>
-                    <li><a href="#"><span>Email Me</span></a></li>
-                    <li><a href="#"><span>Download CV</span></a></li>
+                    <li><a href="mailto:emiliota95@gmail.com"><span>Email Me</span></a></li>
+                    <li><a href="/resources/cv-emilio-tapia-es.pdf"><span>Download CV</span></a></li>
                 </ul>
             </li>
             <li>
                 <p>Projects</p>
                 <ul>
-                    <li><a href="#"><span>HoMS</span></a></li>
-                    <li><a href="#"><span>Comtelec</span></a></li>
+                    <li>
+                        <a href="https://www.comtelec.com/" target="_blank" rel="noopener noreferrer">
+                            <span>Comtelec</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/houseofmodularsynthesizer/" target="_blank" rel="noopener noreferrer">
+                            <span>HoMS</span>
+                        </a>
+                    </li>
+                    
                 </ul>
             </li>
             <li>
                 <p>Social Media</p>
                 <ul>
-                    <li><a href="#"><span>Instagram</span></a></li>
-                    <li><a href="#"><span>Facebook</span></a></li>
-                    <li><a href="#"><span>LinkedIn</span></a></li>
+                    <li>
+                        <a href="https://github.com/emilio-tapia" target="_blank" rel="noopener noreferrer">
+                            <span>Github</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.linkedin.com/in/emilio-tapia-a24150172/" target="_blank" rel="noopener noreferrer">
+                            <span>LinkedIn</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/emilio.________/" target="_blank" rel="noopener noreferrer">
+                            <span>Instagram</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
         </ul>
@@ -52,6 +75,7 @@ import { Icon } from 'astro-icon';
             width: 54px;
             display: inline-block;
             stroke: var(--text-color-100);
+            filter: drop-shadow(2px 1px 3px rgba(0, 0, 0, 0.2))
         }
 
     h2,h3,p{
@@ -64,6 +88,12 @@ import { Icon } from 'astro-icon';
 
         &:hover{
             opacity: 1;
+        }
+    }
+
+    .footer--title{
+        h3{
+            line-height: .75;
         }
     }
 
@@ -87,3 +117,15 @@ import { Icon } from 'astro-icon';
         font-style: italic;
     }
 </style>
+
+<script>
+import gsap from "gsap";
+
+    gsap.to('#hand svg', {
+        rotate: 25,
+        duration: 0.318,
+        repeat: -1,
+        yoyoEase: true,
+    })
+</script>
+

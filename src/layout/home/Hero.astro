@@ -1,7 +1,8 @@
 ---
+import { Icon } from 'astro-icon';
 const talento = ['UI/UX', 'Front-end Developer', 'Sound Design', 'Audiovisual Production']
 // import { Image, Picture } from '@astrojs/image/components';
-const heroImg = '/images/hero.jpg'
+const heroImg = '/images/hero.webp'
 ---
 <section class="hero">
     <div class="hero--content">
@@ -17,12 +18,20 @@ const heroImg = '/images/hero.jpg'
             )
         }
         </ul>
+        <div class="hero--icons">
+            <a href="https://github.com/emilio-tapia" target="_blank" rel="noopener noreferrer">
+                <Icon name="social-github"/>
+            </a>
+            <a href="https://www.linkedin.com/in/emilio-tapia-a24150172/" target="_blank" rel="noopener noreferrer">
+                <Icon name="social-linkedin"/>
+            </a>
+        </div>
     </div>
 
     <div class="iframe-wrapper">
         <div class="dummy-padding"></div>
         <picture data-element="hero-img">
-            <img src={heroImg} alt="hero" width="255" height="267">
+            <img src={heroImg} alt="hero" width="1080" height="1080">
         </picture>
       </div>
 
@@ -36,7 +45,7 @@ const heroImg = '/images/hero.jpg'
     .hero{
         display: grid;
         gap: 2rem;
-        padding-block: clamp(2rem, 10dvw, 5rem);
+        padding-block: clamp(2rem, 10dvw, 4rem);
         grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
 
         &--content{
@@ -56,6 +65,22 @@ const heroImg = '/images/hero.jpg'
 
         h1{
             line-height: .75;
+        }
+    }
+
+    .hero--icons{
+        display: flex;
+        gap: 1rem;
+        
+        svg{
+            height: 44px;
+            transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            fill: currentColor;
+
+            &:hover{
+                transform: scale(1.05);
+                fill: green;
+            }
         }
     }
 
