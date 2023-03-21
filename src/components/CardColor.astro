@@ -1,4 +1,5 @@
 ---
+import { t } from "i18next";
 import ButtonPrimary from "./ButtonPrimary.astro";
 
 const { time, name, description, url, dataColor, nameBgImg } = Astro.props
@@ -13,7 +14,7 @@ const urlBgImg = `url("/images/${nameBgImg}")`
         </div>
         <h4>{name}</h4>
         <span>{description}</span>
-        <ButtonPrimary text="Visit web" url={url}></ButtonPrimary>
+        <ButtonPrimary text={t("extra.visitWeb")} url={url}></ButtonPrimary>
     </div>
 </div>
 
@@ -56,7 +57,7 @@ const urlBgImg = `url("/images/${nameBgImg}")`
         text-align: center;
         justify-items: center;
         gap: 1rem;
-        z-index: 50;
+        z-index: 30;
         position: relative;
     }
     

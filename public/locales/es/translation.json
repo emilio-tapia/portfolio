@@ -1,0 +1,138 @@
+{
+  "menu": {
+    "about": "Acerca de mi",
+    "study": "Estudios",
+    "experience": "Experiencia",
+    "skill": "Habilidades",
+    "project": "Proyectos",
+    "miniproject": "Miniproyectos",
+    "blog": "Blog",
+    "media": "Media"
+  },
+  "hero": {
+    "description": {
+      "job1": "Diseño UI/UX", 
+      "job2": "Desarollo Front-end", 
+      "job3": "Diseño de sonido", 
+      "job4": "Producción Audiovisual"
+    }
+  },
+
+  "aboutMe": {
+    "saludo": {
+      "1": "Hola...",
+      "2": "Que gusto tenerte aquí"
+    },
+    "description": {
+      "1": "Me dedico al desarrollo front-end, diseño UI/UX y producción audiovisual.",
+      "2": "Los principales aspectos de mi carrera profesional son el arte y la tecnología",
+      "3": "Mi pasión recae en el interés por descubrir nuevas posibilidades sobre la interactividad.",
+      "4": "Como productor musical, tenia un gran interés sobre el tema audiovisual / interactivo, era mi deseo poder explorar más en ese campo. Comencé a experimentar el diseño gráfico en 2018.",
+      "5": "Un día trabajando en una animación en After Effects, encontré una herramienta llamada 'expressions'. Se basaba en controlar el comportamiento de la animación por código. Realmente me gustó.",
+      "6": "Entonces empecé aprender a programar.",
+      "7": "Mi meta es seguir aprendiendo constantemente."
+    }
+  },
+
+  "study":{
+    "1":{
+      "year": "2014-2018",
+      "college": "Universidad San Francisco de Quito",
+      "bachelor": "Licenciatura en Producción Musical y Sonido"
+    }
+  },
+
+  "experience":{
+    "1":{
+      "year": "2022-Present",
+      "jobName": "Comtelec Cia. Ltda.",
+      "roles": {
+        "1": "Implementeción front-end y diseño UI/UX de la página web",
+        "2": "Diseñador gráfico en proyectos de la compañia.",
+        "3": "Operador de máquinas de corte laser."
+      }
+    },
+    "2":{
+      "year": "2021-Present",
+      "jobName": "House of Modular Synth",
+      "roles": {
+        "1": "Fundador del proyecto",
+        "2": "Diseño y construcción del espacio de composición musical 'The Playroom'.",
+        "3": "Tareas de logística y administración"
+      }
+    },
+    "3":{
+      "year": "2018-2019",
+      "jobName": "Fundación Teatro Sucre",
+      "roles": {
+        "1": "Pasante del departamento de sonido.",
+        "2": "Asistente de logística para eventos que requieran sonido en vivo."
+      }
+    }
+  },
+
+  "skills":{
+    "professional": {
+      "name": "Professional Skills",
+      "group": {
+        "1": "Desarrollador Front-End",
+        "2": "Sistema de diseño UI",
+        "3": "Desarrollo de la experiencia del usuario",
+        "4": "Diseño de animaciones web",
+        "5": "Diseño de sonido",
+        "6": "Producción audiovisual"
+      }
+    },
+    "soft": {
+      "name": "Aptitudes",
+      "group": {
+        "1": "Trabajo bajo presión.",
+        "2": "Autodidacta.",
+        "3": "Trabajo colectivo."
+      }
+    }
+  },
+
+  "projects":{
+    "comtelec": {
+      "year": "2002-2023",
+      "name": "Comtelec Web Page",
+      "description": "Empresa de fibra optica / telecomunicaciones"
+    },
+    "homs": {
+      "year": "2021-2023",
+      "name": "House of Modular Synth",
+      "description": "Experiencia eurorack al alcance de todos"
+    }
+  },
+
+  "footer": {
+    "goobye": {
+      "1": "Adiós...",
+      "2": "Gracias por tu visita"
+    },
+    "nav": {
+      "1": {
+        "name": "Contacto",
+        "emailMe": "Enviame un email",
+        "cv": "Descargar CV"
+      },
+      "2": {
+        "name": "Proyectos"
+      },
+      "3": {
+        "name": "Redes Sociales"
+      }
+    }
+  },
+
+
+  "extra": {
+    "visitWeb": "Visitar Web",
+    "takeLook": "Un poco de mi..",
+    "aboutMy": "Sobre mis..",
+    "spareTime": "Mi tiempo libre"
+  },
+
+    "superCoolKey": "Im not fine"
+  }

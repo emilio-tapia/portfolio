@@ -21,6 +21,7 @@ const urlBgImg = `url("/images/${nameBgImg}")`
         box-shadow: 0px 3px 37px 2px rgba(0, 0, 0, 0.25);
         border-radius: 20px;
         overflow: hidden;
+        transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         
 
         &::before{
@@ -33,21 +34,33 @@ const urlBgImg = `url("/images/${nameBgImg}")`
             inset: 0;
             width: 100%;
             height: 100%;
-            opacity: .4;
+            opacity: .9;
+            transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         &:hover{
             transform: scale(1.05);
+
+            &::before{
+            content: '';
+            transform: scale(1.1);
+        }
         }
     }
 
     [data-card-color="blue"]{
         background: linear-gradient(329.13deg, #0044CB -0.94%, #0086D4 68.8%);
     }
+    [data-card-color="light-blue"]{
+        background: linear-gradient(329.13deg,#0044cb54 -0.94%,#0086d463 68.8%);
+    }
 
     [data-card-color="green"]{
         background: linear-gradient(329.13deg, #00A879 -0.94%, #00A36D 28.26%);
+    }
+    [data-card-color="purple"]{
+        background: linear-gradient(329.13deg,#675e9a -0.94%,#3a4ac2 28.26%);
     }
     
     a{

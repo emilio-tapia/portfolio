@@ -1,24 +1,25 @@
 ---
 import { Icon } from 'astro-icon';
+import { t } from "i18next";
 
 ---
 
 <footer>
     <div class="footer--title" >
-        <h2>Thanks <i id="hand"><Icon name="footer-hand"/></i></h2>
-        <h3>for your visit</h3>
+        <h2>{t("footer.goodbye.1")}<i id="hand"><Icon name="footer-hand"/></i></h2>
+        <h3>{t("footer.goodbye.2")}</h3>
     </div>
     <nav class="footer--nav">
         <ul>
             <li>
-                <p>Contact</p>
+                <p>{t("footer.nav.1.name")}</p>
                 <ul>
-                    <li><a href="mailto:emiliota95@gmail.com"><span>Email Me</span></a></li>
-                    <li><a href="/resources/cv-emilio-tapia-es.pdf"><span>Download CV</span></a></li>
+                    <li><a href="mailto:emiliota95@gmail.com"><span>{t("footer.nav.1.emailMe")}</span></a></li>
+                    <li><a href="/resources/cv-emilio-tapia-es.pdf"><span>{t("footer.nav.1.cv")}</span></a></li>
                 </ul>
             </li>
             <li>
-                <p>Projects</p>
+                <p>{t("footer.nav.2.name")}</p>
                 <ul>
                     <li>
                         <a href="https://www.comtelec.com/" target="_blank" rel="noopener noreferrer">
@@ -34,7 +35,7 @@ import { Icon } from 'astro-icon';
                 </ul>
             </li>
             <li>
-                <p>Social Media</p>
+                <p>{t("footer.nav.3.name")}</p>
                 <ul>
                     <li>
                         <a href="https://github.com/emilio-tapia" target="_blank" rel="noopener noreferrer">

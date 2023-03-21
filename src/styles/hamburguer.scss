@@ -12,22 +12,22 @@
 
   .middle {
     transform-origin: center;
-    transition: 1s;
+    transition: 0.8s;
   }
 
   &[data-state='close'] {
     :is(.top, .bottom) {
-      animation: open-icon 1s forwards;
+      animation: open-icon 0.8s forwards;
     }
   }
 
   &[data-state='open'] {
     :is(.top, .bottom) {
-      animation: close-icon 1s forwards;
+      animation: close-icon 0.8s forwards;
     }
 
     .middle {
-      transition: stroke-dashoffset 1s, opacity 0 1s;
+      transition: stroke-dashoffset 0.8s, opacity 0 1s;
       stroke-dashoffset: 79;
       opacity: 0;
     }

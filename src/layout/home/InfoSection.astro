@@ -1,97 +1,99 @@
 ---
+import { t } from "i18next";
 import ButtonBlog from "../../components/ButtonBlog.astro";
 import ContentCard from "../ContentCard.astro";
 import CardColor from "../../components/CardColor.astro";
 import CardSmall from "../../components/CardSmall.astro";
+import '../../styles/layout_mixins.scss'
+import VideoWrapper from "../../components/VideoWrapper.astro";
+import CarouselSkills from "../../components/CarouselSkills.astro";
 ---
 
 
-<section>
-    <ContentCard title="Studies" smallText="About my..." iconName="info-studies">
+<section class="info--parent">
+    <ContentCard title={t("menu.study")} smallText={t("extra.aboutMy")} iconName="info-studies" id="studies">
         <div class="study">
-            <small>2014-2018</small>
-            <h6>Universidad San Francisco de Quito</h6>
-            <span>Bachelor in Musical Production and Sound</span>
+            <small>{t("study.1.year")}</small>
+            <h6>{t("study.1.college")}</h6>
+            <span>{t("study.1.bachelor")}</span>
         </div>
     </ContentCard>
-    <ContentCard title="Experience" smallText="About my..." iconName="info-experience">
+    <ContentCard title={t("menu.experience")} smallText={t("extra.takeLook")} iconName="info-experience" id="experience">
         <nav class="job-list">
             <div class="job">
-                <span>2022-Present</span>
-            <h6>Comtelec Cia. Ltda.</h6>
+                <span>{t("experience.1.year")}</span>
+            <h6>{t("experience.1.jobName")}</h6>
             <ul>
-                <li><span>Branding and design aesthetic area of the company.</span></li>
-                <li><span>UI/UX and front-end implementation of the webpage</span></li>
+                <li><span>{t("experience.1.roles.1")}</span></li>
+                <li><span>{t("experience.1.roles.2")}</span></li>
             </ul>
         </div>
         <div class="job">
-                <span>2021-Present</span>
-            <h6>House of Modular Synth</h6>
+                <span>{t("experience.2.year")}</span>
+            <h6>{t("experience.2.jobName")}</h6>
             <ul>
-                <li><span>Founder of the project.</span></li>
-                <li><span>Administration and logistics tasks</span></li>
+                <li><span>{t("experience.2.roles.1")}</span></li>
+                <li><span>{t("experience.2.roles.2")}</span></li>
+                <li><span>{t("experience.2.roles.3")}</span></li>
             </ul>
         </div>
         <div class="job">
-                <span>2018-2019</span>
-            <h6>Fundación Teatro Sucre</h6>
+                <span>{t("experience.3.year")}</span>
+            <h6>{t("experience.3.jobName")}</h6>
             <ul>
-                <li><span>Helping in the sound area.</span></li>
-                <li><span>Administration and logistics tasks</span></li>
+                <li><span>{t("experience.3.roles.1")}</span></li>
+                <li><span>{t("experience.3.roles.2")}</span></li>
             </ul>
         </div>
         </nav>
     </ContentCard>
-    <ContentCard title="Skills" smallText="About my..." iconName="info-skills">
+    <ContentCard title={t("menu.skill")} smallText={t("extra.aboutMy")} iconName="info-skills" id="skills">
         <div class="skill-container">
             <div class="skill-group">
-                <h6>Hard Skills</h6>
+                <h6>{t("skills.professional.name")}</h6>
                 <ul>
-                    <li><span>Web development</span></li>
-                    <li><span>App development</span></li>
-                    <li><span>Audiovisual production</span></li>
+                    <li><span>{t("skills.professional.group.1")}</span></li>
+                    <li><span>{t("skills.professional.group.2")}</span></li>
+                    <li><span>{t("skills.professional.group.3")}</span></li>
+                    <li><span>{t("skills.professional.group.4")}</span></li>
+                    <li><span>{t("skills.professional.group.5")}</span></li>
+                    <li><span>{t("skills.professional.group.6")}</span></li>
                 </ul>
             </div>
             <div class="skill-group">
-                <h6>Soft Skills</h6>
+                <h6>{t("skills.soft.name")}</h6>
                 <ul>
-                    <li><span>Trabajo colectivo y bajo presión.</span></li>
-                    <li><span>Investigación y análisis.</span></li>
-                    <li><span>Organización y logística de proyectos. </span></li>
+                    <li><span>{t("skills.soft.group.1")}</span></li>
+                    <li><span>{t("skills.soft.group.2")}</span></li>
+                    <li><span>{t("skills.soft.group.3")}</span></li>
                 </ul>
             </div>
             <div class="skill-group">
                 <h6>Programming Skills</h6>
-                <ul>
-                    <li><span>HTML</span></li>
-                    <li><span>CSS/SCSS</span></li>
-                    <li><span>JS</span></li>
-                    <li><span>Svelte</span></li>
-                    <li><span>Astro</span></li>
-                    <li><span>Flutter</span></li>
-                </ul>
+                <CarouselSkills />
+
             </div>
         </div>
     </ContentCard>
-    <ContentCard title="Projects" smallText="Te presentamos" iconName="info-studies">
+    <ContentCard title={t("menu.project")} smallText={t("extra.aboutMy")} iconName="info-projects" id="projects">
         <div class="projects--layout">
             <CardColor 
-            time="2022-2023" 
-            name="Comtelec Web Page" 
-            description="Empresa de fibra optica / telecomunicaciones" 
+            time={t("projects.comtelec.year")} 
+            name={t("projects.comtelec.name")}
+            description={t("projects.comtelec.description")} 
             url="https://www.comtelec.com/" 
             dataColor="blue" 
             nameBgImg="comtelec-card.png"/>
             <CardColor 
-            time="2021-2023" 
-            name="House of Modular Synth" 
-            description="Sintetizadores al alcance de todos" 
+            time={t("projects.homs.year")} 
+            name={t("projects.homs.name")} 
+            description={t("projects.homs.description")} 
             url="https://www.instagram.com/houseofmodularsynthesizer/" 
             dataColor="green"
             nameBgImg="homs-card.jpg"/> 
         </div>
     </ContentCard>
-    <ContentCard title="Miniprojects" smallText="Te presentamos" iconName="info-studies">
+    <ContentCard title={t("menu.miniproject")} smallText={t("extra.spareTime")} iconName="info-miniprojects" id="miniprojects">
         <div class="miniprojects--layout">
             <CardSmall 
             nameBgImg="p5.png" 
@@ -102,28 +104,52 @@ import CardSmall from "../../components/CardSmall.astro";
             dataColor="green" 
             url="https://codepen.io/emilio_ta/pen/ExEzrYx"/>
             <CardSmall 
-            nameBgImg="p5.png" 
+            nameBgImg="p5-3.png" 
             dataColor="blue" 
-            url="https://codepen.io/emilio_ta/pen/OJvYdLz"/>
+            url="https://codepen.io/emilio_ta/pen/vYRpPqZ"/>
             <CardSmall 
-            nameBgImg="p5-2.png" 
+            nameBgImg="p5-4.png" 
+            dataColor="purple" 
+            url="https://codepen.io/emilio_ta/pen/BarQMBb"/>
+            <CardSmall 
+            nameBgImg="p5-5.png" 
+            dataColor="light-blue" 
+            url="https://codepen.io/emilio_ta/pen/oNEgjPE"/>
+            <CardSmall 
+            nameBgImg="p5-6.png" 
             dataColor="green" 
-            url="https://codepen.io/emilio_ta/pen/ExEzrYx"/>
-            <CardSmall 
-            nameBgImg="p5.png" 
-            dataColor="blue" 
-            url="https://codepen.io/emilio_ta/pen/OJvYdLz"/>
-            <CardSmall 
-            nameBgImg="p5-2.png" 
-            dataColor="green" 
-            url="https://codepen.io/emilio_ta/pen/ExEzrYx"/>
+            url="https://codepen.io/emilio_ta/pen/vYRyRNY"/>
         </div>
     </ContentCard>
-    <ContentCard title="Blog" smallText="Te presentamos" iconName="info-studies">
+    <!-- <ContentCard title={t("menu.blog")} smallText="Te presentamos" iconName="info-studies" id="blog">
         <div class="blog--buttons">
             <ButtonBlog title="Trick for CSS and SVG"/>
             <ButtonBlog title="Trick for CSS and SVG"/>
             <ButtonBlog title="Trick for CSS and SVG"/>
+        </div>
+    </ContentCard> -->
+    <ContentCard title={t("menu.media")} smallText={t("extra.takeLook")} iconName="info-media" id="media">
+
+        <div class="media-list">
+            <VideoWrapper>
+                <iframe class="responsive-frame"
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/YWSv71WMkEQ"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </VideoWrapper>
+            <VideoWrapper>
+                <iframe class="responsive-frame" width="560" height="315" src="https://www.youtube.com/embed/eMMe_5xns0g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </VideoWrapper>
+            <VideoWrapper>
+                <iframe class="responsive-frame" width="560" height="315" src="https://www.youtube.com/embed/T1GWh5NQ2RA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </VideoWrapper>
+            <VideoWrapper>
+                <iframe class="responsive-frame" width="560" height="315" src="https://www.youtube.com/embed/TElsZybToLw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </VideoWrapper>
         </div>
     </ContentCard>
 </section>
@@ -132,22 +158,34 @@ import CardSmall from "../../components/CardSmall.astro";
 <style lang="scss">
 
 
-    section{
-        // background: linear-gradient(top, #EAEAE6 0%, #F3F3F2 100%);
-        // background-image: linear-gradient(top, red 0%, blue 100%);
-        background: var(--gradient-info-section)
+    .info--parent{
+        display: grid;
+    gap: 1rem;
+        
     }
 
-    .projects--layout{
+    .projects--layout, .media-list{
         display: grid;
         gap: 1.5rem;
-        grid-template-columns: repeat(auto-fit,minmax(380px,1fr));
+        
+    }
+
+    .media-list{
+        place-items: center;;
+    }
+
+    @media (min-width: 500px){
+        .projects--layout, .media-list{
+            grid-template-columns: repeat(auto-fit,minmax(380px,1fr));
+    }
     }
 
     .miniprojects--layout{
         display: grid;
         gap: 1.5rem;
         grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+        
+
     }
 
     // .study{
@@ -185,5 +223,13 @@ import CardSmall from "../../components/CardSmall.astro";
         //     font-weight: bolder;
         // }
     }
+
+    .responsive-frame {
+    border: none;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    position: absolute;
+  }
 
 </style>
