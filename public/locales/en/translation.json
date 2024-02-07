@@ -135,5 +135,8 @@
     "spareTime": "My spare time"
   },
 
-    "superCoolKey": "Im not fine"
-  }
+
+      "cv": {
+        "location": "/resources/cv-emilio-tapia-en.pdf"
+    }
+}
