@@ -1,0 +1,60 @@
+---
+import Icon from "astro-icon";
+import BorderRounded from "@/components/border/BorderRounded.astro";
+import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
+// interface Props {
+//   message: string;
+// }
+
+// const { message = 'Welcome, world!' } = Astro.props;
+
+const iconPaths = {
+  darkMode: "moon",
+  lightMode: "sun",
+};
+---
+
+<ComponentBoundaries
+  className="flex items-center justify-center border-l border-black bg-[#3870d0] p-0 h-[4.5rem] md:h-full"
+>
+  <!-- Store the message prop as a data attribute. -->
+  <dark-switch class="flex" aria-label="Dark Mode Switch">
+    <div
+      class="flex text-xs font-semibold leading-5 child:w-auto child:py-2 child:px-4 child:duration-300 border border-black rounded-lg overflow-hidden"
+    >
+      <button
+        data-theme-switch="light"
+        class="bg-black dark:!bg-transparent text-white dark:text-black"
+      >
+        <Icon name={iconPaths.lightMode} class="fill-current w-5" />
+      </button>
+      <button
+        data-theme-switch="dark"
+        class="bg-transparent text-black dark:bg-black dark:text-white"
+      >
+        <Icon name={iconPaths.darkMode} class="fill-current w-5" />
+      </button>
+    </div>
+  </dark-switch>
+</ComponentBoundaries>
+
+<script>
+  import { setDarkMode, setLightMode } from "@/scripts/theme/darkMode";
+
+  class DarkModeSwitch extends HTMLElement {
+    constructor() {
+      super();
+      const buttons = this.querySelectorAll("button");
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          const element = e.currentTarget as HTMLElement;
+          const selectedTheme = element.dataset.themeSwitch;
+          if (selectedTheme === "dark") setDarkMode();
+          if (selectedTheme === "light") setLightMode();
+        });
+      });
+    }
+  }
+
+  customElements.define("dark-switch", DarkModeSwitch);
+</script>
