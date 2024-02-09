@@ -23,14 +23,12 @@ import ProgrammingSection from "@/layout/home/ProgrammingSection.astro";
           "main"
           "footer";
         grid-template-rows: auto 1fr auto;
-        scroll-snap-type: y mandatory;
-        scroll-margin-top: 5rem;
       }
     </style>
   </Head>
   <Body>
     <Hero />
-    <div class="hidden md:block"><LinksNavigation /></div>
+    <LinksNavigation />
     <AboutMe />
     <StudySection />
     <ExperienceSection />
