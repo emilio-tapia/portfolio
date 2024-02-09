@@ -1,235 +1,293 @@
 ---
-import { t } from "i18next";
-import ButtonBlog from "../../components/ButtonBlog.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import ComponentBoundaries from "../ComponentBoundaries.astro";
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
 import ContentCard from "../ContentCard.astro";
 import CardColor from "../../components/CardColor.astro";
 import CardSmall from "../../components/CardSmall.astro";
-import '../../styles/layout_mixins.scss'
 import VideoWrapper from "../../components/VideoWrapper.astro";
 import CarouselSkills from "../../components/CarouselSkills.astro";
 ---
 
-
 <section class="info--parent">
-    <ContentCard title={t("menu.study")} smallText={t("extra.aboutMy")} iconName="info-studies" id="studies">
-        <div class="study">
-            <small>{t("study.1.year")}</small>
-            <h6>{t("study.1.college")}</h6>
-            <span>{t("study.1.bachelor")}</span>
-        </div>
-    </ContentCard>
-    <ContentCard title={t("menu.experience")} smallText={t("extra.takeLook")} iconName="info-experience" id="experience">
-        <nav class="job-list">
-            <div class="job">
-                <span>{t("experience.1.year")}</span>
-            <h6>{t("experience.1.jobName")}</h6>
-            <ul>
-                <li><span>{t("experience.1.roles.1")}</span></li>
-                <li><span>{t("experience.1.roles.2")}</span></li>
-            </ul>
-        </div>
-        <div class="job">
-                <span>{t("experience.2.year")}</span>
-            <h6>{t("experience.2.jobName")}</h6>
-            <ul>
-                <li><span>{t("experience.2.roles.1")}</span></li>
-                <li><span>{t("experience.2.roles.2")}</span></li>
-                <li><span>{t("experience.2.roles.3")}</span></li>
-            </ul>
-        </div>
-        <div class="job">
-                <span>{t("experience.3.year")}</span>
-            <h6>{t("experience.3.jobName")}</h6>
-            <ul>
-                <li><span>{t("experience.3.roles.1")}</span></li>
-                <li><span>{t("experience.3.roles.2")}</span></li>
-            </ul>
-        </div>
-        </nav>
-    </ContentCard>
-    <ContentCard title={t("menu.skill")} smallText={t("extra.aboutMy")} iconName="info-skills" id="skills">
-        <div class="skill-container">
-            <div class="skill-group">
-                <h6>{t("skills.professional.name")}</h6>
-                <ul>
-                    <li><span>{t("skills.professional.group.1")}</span></li>
-                    <li><span>{t("skills.professional.group.2")}</span></li>
-                    <li><span>{t("skills.professional.group.3")}</span></li>
-                    <li><span>{t("skills.professional.group.4")}</span></li>
-                    <li><span>{t("skills.professional.group.5")}</span></li>
-                    <li><span>{t("skills.professional.group.6")}</span></li>
-                </ul>
-            </div>
-            <div class="skill-group">
-                <h6>{t("skills.soft.name")}</h6>
-                <ul>
-                    <li><span>{t("skills.soft.group.1")}</span></li>
-                    <li><span>{t("skills.soft.group.2")}</span></li>
-                    <li><span>{t("skills.soft.group.3")}</span></li>
-                </ul>
-            </div>
-            <div class="skill-group">
-                <h6>Programming Skills</h6>
-                <CarouselSkills />
-
-            </div>
-        </div>
-    </ContentCard>
-    <ContentCard title={t("menu.project")} smallText={t("extra.aboutMy")} iconName="info-projects" id="projects">
-        <div class="projects--layout">
-            <CardColor 
-            time={t("projects.comtelec.year")} 
-            name={t("projects.comtelec.name")}
-            description={t("projects.comtelec.description")} 
-            url="https://www.comtelec.com/" 
-            dataColor="blue" 
-            nameBgImg="comtelec-card.png"/>
-            <CardColor 
-            time={t("projects.homs.year")} 
-            name={t("projects.homs.name")} 
-            description={t("projects.homs.description")} 
-            url="https://www.instagram.com/houseofmodularsynthesizer/" 
-            dataColor="green"
-            nameBgImg="homs-card.jpg"/> 
-        </div>
-    </ContentCard>
-    <ContentCard title={t("menu.miniproject")} smallText={t("extra.spareTime")} iconName="info-miniprojects" id="miniprojects">
-        <div class="miniprojects--layout">
-            <CardSmall 
-            nameBgImg="p5.png" 
-            dataColor="blue" 
-            url="https://codepen.io/emilio_ta/pen/OJvYdLz"/>
-            <CardSmall 
-            nameBgImg="p5-2.png" 
-            dataColor="green" 
-            url="https://codepen.io/emilio_ta/pen/ExEzrYx"/>
-            <CardSmall 
-            nameBgImg="p5-3.png" 
-            dataColor="blue" 
-            url="https://codepen.io/emilio_ta/pen/vYRpPqZ"/>
-            <CardSmall 
-            nameBgImg="p5-4.png" 
-            dataColor="purple" 
-            url="https://codepen.io/emilio_ta/pen/BarQMBb"/>
-            <CardSmall 
-            nameBgImg="p5-5.png" 
-            dataColor="light-blue" 
-            url="https://codepen.io/emilio_ta/pen/oNEgjPE"/>
-            <CardSmall 
-            nameBgImg="p5-6.png" 
-            dataColor="green" 
-            url="https://codepen.io/emilio_ta/pen/vYRyRNY"/>
-        </div>
-    </ContentCard>
-    <!-- <ContentCard title={t("menu.blog")} smallText="Te presentamos" iconName="info-studies" id="blog">
+  <!-- <ContentCard
+    title={t("menu").study}
+    smallText={t("extra").aboutMy}
+    iconName="info-studies"
+    id="studies"
+  >
+    <div class="study">
+      <small>{t("study")["1"].year}</small>
+      <h6>{t("study")["1"].college}</h6>
+      <span>{t("study")["1"].bachelor}</span>
+    </div>
+  </ContentCard> -->
+  <!-- <ContentCard
+    title={t("menu.experience")}
+    smallText={t("extra.takeLook")}
+    iconName="info-experience"
+    id="experience"
+  >
+    <nav class="job-list">
+      <div class="job">
+        <span>{t("experience.1.year")}</span>
+        <h6>{t("experience.1.jobName")}</h6>
+        <ul>
+          <li><span>{t("experience.1.roles.1")}</span></li>
+          <li><span>{t("experience.1.roles.2")}</span></li>
+        </ul>
+      </div>
+      <div class="job">
+        <span>{t("experience.2.year")}</span>
+        <h6>{t("experience.2.jobName")}</h6>
+        <ul>
+          <li><span>{t("experience.2.roles.1")}</span></li>
+          <li><span>{t("experience.2.roles.2")}</span></li>
+          <li><span>{t("experience.2.roles.3")}</span></li>
+        </ul>
+      </div>
+      <div class="job">
+        <span>{t("experience.3.year")}</span>
+        <h6>{t("experience.3.jobName")}</h6>
+        <ul>
+          <li><span>{t("experience.3.roles.1")}</span></li>
+          <li><span>{t("experience.3.roles.2")}</span></li>
+        </ul>
+      </div>
+    </nav>
+  </ContentCard> -->
+  <!-- <ContentCard
+    title={t("menu.skill")}
+    smallText={t("extra.aboutMy")}
+    iconName="info-skills"
+    id="skills"
+  >
+    <div class="skill-container">
+      <div class="skill-group">
+        <h6>{t("skills.professional.name")}</h6>
+        <ul>
+          <li><span>{t("skills.professional.group.1")}</span></li>
+          <li><span>{t("skills.professional.group.2")}</span></li>
+          <li><span>{t("skills.professional.group.3")}</span></li>
+          <li><span>{t("skills.professional.group.4")}</span></li>
+          <li><span>{t("skills.professional.group.5")}</span></li>
+          <li><span>{t("skills.professional.group.6")}</span></li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h6>{t("skills.soft.name")}</h6>
+        <ul>
+          <li><span>{t("skills.soft.group.1")}</span></li>
+          <li><span>{t("skills.soft.group.2")}</span></li>
+          <li><span>{t("skills.soft.group.3")}</span></li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h6>Programming Skills</h6>
+        <CarouselSkills />
+      </div>
+    </div>
+  </ContentCard> -->
+  <!-- <ContentCard
+    title={t("menu.project")}
+    smallText={t("extra.aboutMy")}
+    iconName="info-projects"
+    id="projects"
+  >
+    <div class="projects--layout">
+      <CardColor
+        time={t("projects.comtelec.year")}
+        name={t("projects.comtelec.name")}
+        description={t("projects.comtelec.description")}
+        url="https://www.comtelec.com/"
+        dataColor="blue"
+        nameBgImg="comtelec-card.png"
+      />
+      <CardColor
+        time={t("projects.homs.year")}
+        name={t("projects.homs.name")}
+        description={t("projects.homs.description")}
+        url="https://www.instagram.com/houseofmodularsynthesizer/"
+        dataColor="green"
+        nameBgImg="homs-card.jpg"
+      />
+    </div>
+  </ContentCard> -->
+  <!-- <ContentCard
+    title={t("menu.miniproject")}
+    smallText={t("extra.spareTime")}
+    iconName="info-miniprojects"
+    id="miniprojects"
+  >
+    <div class="miniprojects--layout">
+      <CardSmall
+        nameBgImg="p5.png"
+        dataColor="blue"
+        url="https://codepen.io/emilio_ta/pen/OJvYdLz"
+      />
+      <CardSmall
+        nameBgImg="p5-2.png"
+        dataColor="green"
+        url="https://codepen.io/emilio_ta/pen/ExEzrYx"
+      />
+      <CardSmall
+        nameBgImg="p5-3.png"
+        dataColor="blue"
+        url="https://codepen.io/emilio_ta/pen/vYRpPqZ"
+      />
+      <CardSmall
+        nameBgImg="p5-4.png"
+        dataColor="purple"
+        url="https://codepen.io/emilio_ta/pen/BarQMBb"
+      />
+      <CardSmall
+        nameBgImg="p5-5.png"
+        dataColor="light-blue"
+        url="https://codepen.io/emilio_ta/pen/oNEgjPE"
+      />
+      <CardSmall
+        nameBgImg="p5-6.png"
+        dataColor="green"
+        url="https://codepen.io/emilio_ta/pen/vYRyRNY"
+      />
+    </div>
+  </ContentCard> -->
+  <!-- <ContentCard title={t("menu.blog")} smallText="Te presentamos" iconName="info-studies" id="blog">
         <div class="blog--buttons">
             <ButtonBlog title="Trick for CSS and SVG"/>
             <ButtonBlog title="Trick for CSS and SVG"/>
             <ButtonBlog title="Trick for CSS and SVG"/>
         </div>
     </ContentCard> -->
-    <ContentCard title={t("menu.media")} smallText={t("extra.takeLook")} iconName="info-media" id="media">
-
-        <div class="media-list">
-            <VideoWrapper>
-                <iframe class="responsive-frame"
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/YWSv71WMkEQ"
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-            </VideoWrapper>
-            <VideoWrapper>
-                <iframe class="responsive-frame" width="560" height="315" src="https://www.youtube.com/embed/eMMe_5xns0g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </VideoWrapper>
-            <VideoWrapper>
-                <iframe class="responsive-frame" width="560" height="315" src="https://www.youtube.com/embed/T1GWh5NQ2RA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </VideoWrapper>
-            <VideoWrapper>
-                <iframe class="responsive-frame" width="560" height="315" src="https://www.youtube.com/embed/TElsZybToLw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </VideoWrapper>
-        </div>
-    </ContentCard>
+  <!-- <ContentCard
+    title={t("menu.media")}
+    smallText={t("extra.takeLook")}
+    iconName="info-media"
+    id="media"
+  >
+    <div class="media-list">
+      <VideoWrapper>
+        <iframe
+          class="responsive-frame"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/YWSv71WMkEQ"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </VideoWrapper>
+      <VideoWrapper>
+        <iframe
+          class="responsive-frame"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/eMMe_5xns0g"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </VideoWrapper>
+      <VideoWrapper>
+        <iframe
+          class="responsive-frame"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/T1GWh5NQ2RA"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </VideoWrapper>
+      <VideoWrapper>
+        <iframe
+          class="responsive-frame"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/TElsZybToLw"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </VideoWrapper>
+    </div>
+  </ContentCard> -->
 </section>
 
-
 <style lang="scss">
-
-
-    .info--parent{
-        display: grid;
+  .info--parent {
+    display: grid;
     gap: 1rem;
-        
+  }
+
+  .projects--layout,
+  .media-list {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .media-list {
+    place-items: center;
+  }
+
+  @media (min-width: 500px) {
+    .projects--layout,
+    .media-list {
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    }
+  }
+
+  .miniprojects--layout {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  // .study{
+  //     display: grid;
+  //     gap: 0.5rem;
+  //     background: rgba(215, 255, 235, 0.1);
+  //     padding-inline: 1rem;
+  //     padding-block: 0.75rem;
+  //     box-shadow: 0px 3px 37px 2px rgba(0, 0, 0, 0.25);
+  // }
+
+  .job-list,
+  .skill-container,
+  .blog--buttons {
+    display: grid;
+    gap: 1rem;
+    // grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+  }
+
+  .job,
+  .study,
+  .skill-group {
+    display: grid;
+    align-content: start;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding-inline: 1.25rem;
+    padding-block: 1rem;
+    box-shadow: 0px 3px 37px -8px rgba(0, 0, 0, 0.25);
+    border-radius: 18px;
+
+    li {
+      list-style-type: disc;
+      list-style-position: inside;
     }
 
-    .projects--layout, .media-list{
-        display: grid;
-        gap: 1.5rem;
-        
-    }
-
-    .media-list{
-        place-items: center;;
-    }
-
-    @media (min-width: 500px){
-        .projects--layout, .media-list{
-            grid-template-columns: repeat(auto-fit,minmax(380px,1fr));
-    }
-    }
-
-    .miniprojects--layout{
-        display: grid;
-        gap: 1.5rem;
-        grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
-        
-
-    }
-
-    // .study{
-    //     display: grid;
-    //     gap: 0.5rem;
-    //     background: rgba(215, 255, 235, 0.1);
-    //     padding-inline: 1rem;
-    //     padding-block: 0.75rem;
-    //     box-shadow: 0px 3px 37px 2px rgba(0, 0, 0, 0.25);
+    // h5{
+    //     font-family: "SF Pro Text";
+    //     font-weight: bolder;
     // }
+  }
 
-    .job-list, .skill-container, .blog--buttons{
-        display: grid;
-        gap: 1rem;
-        // grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
-    }
-
-    .job, .study, .skill-group{
-        display: grid;
-        align-content: start;
-        gap: 0.5rem;
-        background: rgba(255,255,255,0.1);
-        padding-inline: 1.25rem;
-        padding-block: 1rem;
-        box-shadow: 0px 3px 37px -8px rgba(0,0,0,0.25);
-        border-radius: 18px;
-
-        li{
-            list-style-type: disc;
-    list-style-position: inside;
-        }
-
-        // h5{
-        //     font-family: "SF Pro Text";
-        //     font-weight: bolder;
-        // }
-    }
-
-    .responsive-frame {
+  .responsive-frame {
     border: none;
     width: 100%;
     height: 100%;
     inset: 0;
     position: absolute;
   }
-
 </style>

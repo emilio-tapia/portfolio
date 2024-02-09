@@ -1,83 +1,45 @@
 ---
 // import { Trans } from "astro-i18next/components";
-import { t } from "i18next";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import ComponentBoundaries from "../ComponentBoundaries.astro";
+import TitleSectionGrid from "@/components/text/TitleSectionGrid.astro";
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
 
 const summaryItems = [
-    'I am a frontend developer, graphic designer, music producer.',
-    'My passion transcends in looking for new possibilities to get better user experience.',
-    'I focus in human interactions with different media',
-    'I started my journey into the interactivity field in 2021.',
-    'Love the ways technology and interactivity can combine to create better experiences'
-]
+  "I am a frontend developer, graphic designer, music producer.",
+  "My passion transcends in looking for new possibilities to get better user experience.",
+  "I focus in human interactions with different media",
+  "I started my journey into the interactivity field in 2021.",
+  "Love the ways technology and interactivity can combine to create better experiences",
+];
 ---
 
-<section class="summary" id="summary">
-    <div class="summary--name">
-        <h2>{t("aboutMe.saludo.1")}</h2>
-        <h3>{t("aboutMe.saludo.2")}</h3>
+<section
+  class="summary grid items-start lg:grid-cols-[1fr_2fr] max-lg:divide-y lg:divide-x divide-black"
+  id="summary"
+>
+  <TitleSectionGrid color="dark:text-[#87a0b2]">
+    {t("menu").about}
+  </TitleSectionGrid>
+  <ComponentBoundaries className="bg-[#87a0b2] p-8 h-full">
+    <div class="md:columns-2 [column-gap:4rem] [column-rule:1px_solid_black]">
+      {
+        t("aboutMe").about.map((value) => {
+          if (value.length > 0) {
+            return <p class="text-black">{value}</p>;
+          } else {
+            return <br />;
+          }
+        })
+      }
     </div>
-    <ul class="summary--items">
-    <!-- {
-        summaryItems.map(item => 
-            <li>{item}</li>
-        )
-    } -->
-
-        <li>{t("aboutMe.description.1")}</li>
-        <!-- <li>{t("aboutMe.description.2")}</li> -->
-        <li>{t("aboutMe.description.3")}</li>
-        <hr>
-        <li>{t("aboutMe.description.4")}</li>
-        <li>{t("aboutMe.description.5")}</li>
-        <!-- <li>{t("aboutMe.description.6")}</li> -->
-        <li>{t("aboutMe.description.7")}</li>
-    </ul>
-    <!-- <Trans i18nKey="superCoolKey">
-        An <a href="https://astro.build" title="Astro website">astro</a> integration of
-        <a href="https://www.i18next.com/" title="i18next website">i18next</a> and utility
-        components to help you translate your astro websites!
-      </Trans> -->
-
+  </ComponentBoundaries>
 </section>
 
 <style lang="scss">
-    .summary{
-        margin-block: 2rem;
-        display: grid;
-        gap: 2rem;
-        padding-inline: var(--padding-inline-boundaries);
-        padding-block: clamp(2rem, 10dvw, 5rem);
-        padding-block: clamp(2rem, 10vw, 5rem);
-
-        hr{
-            
-            height: 0.2rem;
-            width: 25%;
-            margin-block: 1rem;
-        }
-    }
-
-    .summary--name{
-        text-transform: uppercase;
-        display: grid;
-        gap: 2rem;
-        
-
-        h2{
-            line-height: .75;
-        }
-
-        h3{
-            font-weight: 400;
-            font-style: italic;
-            line-height: 1.2;
-        }
-    }
-
-    .summary--items{
-        display: grid;
-        gap: 0.8083rem;
-        max-width: 600px;
-    }
-
+  .summary--name {
+    text-transform: uppercase;
+    display: grid;
+  }
 </style>

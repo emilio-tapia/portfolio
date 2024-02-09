@@ -1,0 +1,88 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import ComponentBoundaries from "../ComponentBoundaries.astro";
+import Icon from "astro-icon";
+import CardColor from "@/components/CardColor.astro";
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
+const heroImg = "/images/hero.webp";
+---
+
+<section
+  class="summary grid items-start lg:grid-cols-[2fr_1fr] max-lg:divide-y lg:divide-x divide-black"
+  id=""
+>
+  <ComponentBoundaries
+    className="bg-[#e2e782] p-0 h-full relative overflow-hidden"
+  >
+    <nav class="grid grid-cols-[1fr] divide-y divide-black">
+      <!-- <Icon
+        name="info-projects"
+        class="w-24 absolute top-[50%] right-[10%] [translate:50%_-50%]"
+      /> -->
+      <div class="projects--layout divide-y divide-black">
+        <CardColor
+          time={t("projects").comtelec.year}
+          name={t("projects").comtelec.name}
+          description={t("projects").comtelec.description}
+          url="https://www.comtelec.com/"
+          dataColor="blue"
+          nameBgImg="comtelec-card.png"
+        />
+        <CardColor
+          time={t("projects").homs.year}
+          name={t("projects").homs.name}
+          description={t("projects").homs.description}
+          url="https://www.instagram.com/houseofmodularsynthesizer/"
+          dataColor="green"
+          nameBgImg="homs-card.jpg"
+        />
+        <CardColor
+          time={t("projects").taskmixr.year}
+          name={t("projects").taskmixr.name}
+          description={t("projects").taskmixr.description}
+          url="https://www.taskmixr.com"
+          dataColor="purple"
+          nameBgImg="taskmixr-card.jpg"
+        />
+      </div>
+    </nav>
+
+    <!-- <div
+      class="absolute right-[15%] w-auto bottom-[50%] opacity-10 h-[120%] [translate:50%_50%]"
+    >
+      <Icon name="info-projects" class="w-auto h-full" />
+    </div> -->
+  </ComponentBoundaries>
+  <ComponentBoundaries className="h-full bg-[#292623] flex justify-center p-0 ">
+    <!-- <div class="w-full relative overflow-hidden">
+      <picture data-element="hero-img" class="hero-img">
+        <img
+          src={heroImg}
+          alt="hero"
+          width="1080"
+          height="1080"
+          class="absolute inset-0 object-cover"
+        />
+      </picture>
+    </div> -->
+  </ComponentBoundaries>
+</section>
+
+<style lang="scss">
+  .summary--name {
+    text-transform: uppercase;
+    display: grid;
+    gap: 2rem;
+
+    h2 {
+      line-height: 0.75;
+    }
+
+    h3 {
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1[ "2"];
+    }
+  }
+</style>

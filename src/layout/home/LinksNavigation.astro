@@ -1,0 +1,89 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import ComponentBoundaries from "../ComponentBoundaries.astro";
+import { clsxm } from "@/utils/styles/tw";
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
+type Props = {};
+
+const {} = Astro.props;
+---
+
+<nav id="link_navigation">
+  <ul
+    class:list={clsxm([
+      "flex items-center justify-around text-center",
+      "bg-white text-black dark:text-pal_white dark:bg-pal_blackfromyellow",
+      "child:w-full child:min-[320px]:w-1/2 child:min-[450px]:w-1/3 child:md:w-1/6",
+      "divide-black divide-y min-[320px]:divide-x",
+      "max-md:flex-wrap",
+      "min-[320px]:[&>*:nth-child(2)]:!border-t-0",
+      "min-[320px]:[&>*:nth-child(1)]:!border-l-0",
+      "min-[320px]:[&>*:nth-child(3)]:!border-l-0",
+      "min-[320px]:[&>*:nth-child(5)]:!border-l-0",
+      "min-[450px]:[&>*:nth-child(3)]:!border-t-0",
+      "min-[450px]:[&>*:nth-child(3)]:!border-l",
+      "min-[450px]:[&>*:nth-child(4)]:!border-l-0",
+      "min-[450px]:[&>*:nth-child(5)]:!border-l",
+      "md:!divide-x",
+      "md:!divide-y-0",
+      // "divide-x    max-md:[&>*:nth-child(4)]:!border-l-0 max-md:[&>*:nth-child(2)]:!border-t-0 max-md:[&>*:nth-child(3)]:!border-t-0 max-md:divide-y"
+    ])}
+    class=""
+  >
+    <li>
+      <a href="#studies">
+        <ComponentBoundaries
+          className="active:bg-pal_maroon hover:bg-pal_maroon"
+        >
+          {t("menu").study}
+        </ComponentBoundaries></a
+      >
+    </li>
+    <li>
+      <a href="#experience">
+        <ComponentBoundaries
+          className="active:bg-pal_maroon hover:bg-pal_maroon"
+        >
+          {t("menu").experience}
+        </ComponentBoundaries></a
+      >
+    </li>
+    <li>
+      <a href="#skills">
+        <ComponentBoundaries
+          className="active:bg-pal_maroon hover:bg-pal_maroon"
+        >
+          {t("menu").skill}
+        </ComponentBoundaries></a
+      >
+    </li>
+    <li>
+      <a href="#projects">
+        <ComponentBoundaries
+          className="active:bg-pal_maroon hover:bg-pal_maroon"
+        >
+          {t("menu").project}
+        </ComponentBoundaries></a
+      >
+    </li>
+    <li>
+      <a href="#blog">
+        <ComponentBoundaries
+          className="active:bg-pal_maroon hover:bg-pal_maroon"
+        >
+          {t("menu").blog}
+        </ComponentBoundaries></a
+      >
+    </li>
+    <li>
+      <a href="#contact">
+        <ComponentBoundaries
+          className="active:bg-pal_maroon hover:bg-pal_maroon"
+        >
+          {t("menu").contact}
+        </ComponentBoundaries></a
+      >
+    </li>
+  </ul>
+</nav>

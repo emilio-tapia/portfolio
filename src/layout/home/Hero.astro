@@ -1,125 +1,115 @@
 ---
-import { t } from "i18next";
-import { Icon } from 'astro-icon';
+import { Icon } from "astro-icon";
 // const talento = ['UI/UX', 'Front-end Developer', 'Sound Design', 'Audiovisual Production']
 // import { Image, Picture } from '@astrojs/image/components';
-const heroImg = '/images/hero.webp'
-
+const heroImg = "/images/hero.webp";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import ComponentBoundaries from "../ComponentBoundaries.astro";
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
 ---
-<section class="hero">
+
+<section class="hero divide-x divide-black sm:grid-cols-heroWithImage">
+  <ComponentBoundaries
+    className="p-8 @container/hero_content max-lg:!@container-normal bg-[#e4d190]"
+  >
     <div class="hero--content">
-        <div class="hero--name">
-            <h1>Emilio</h1>
-            <h1>Tapia</h1>
-        </div>
-        <hr>
+      <div class="hero--name">
+        <h1
+          class="text-[#282828] leading-tight max-[500px]:[font-size:max(2rem,15vw)]"
+        >
+          Emilio <br /> Tapia
+        </h1>
+      </div>
+      <hr class="border-current text-current" />
+      <div
+        class="grid gap-4 items-end @[500px]/hero_content:grid-cols-twocol_autoend font-normal"
+      >
         <ul>
-        <!-- {
+          <!-- {
             talento.map(service => 
                 <li>{service}</li>
             )
         } -->
 
-            <li>{t("hero.description.job1")}</li>
-            <li>{t("hero.description.job2")}</li>
-            <li>{t("hero.description.job3")}</li>
-            <li>{t("hero.description.job4")}</li>
+          <li>{t("hero").description.job1}</li>
+          <li>{t("hero").description.job2}</li>
+          <li>{t("hero").description.job3}</li>
         </ul>
         <div class="hero--icons">
-            <a href="https://github.com/emilio-tapia" target="_blank" rel="noopener noreferrer">
-                <Icon name="social-github"/>
-            </a>
-            <a href="https://www.linkedin.com/in/emilio-tapia-a24150172/" target="_blank" rel="noopener noreferrer">
-                <Icon name="social-linkedin"/>
-            </a>
+          <a
+            href="https://github.com/emilio-tapia"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name="social-github" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/emilio-tapia-a24150172/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name="social-linkedin" />
+          </a>
         </div>
-    </div>
-
-    <div class="iframe-wrapper">
-        <div class="dummy-padding"></div>
-        <picture data-element="hero-img">
-            <img src={heroImg} alt="hero" width="1080" height="1080">
-        </picture>
       </div>
+    </div>
+  </ComponentBoundaries>
 
-
-
+  <div class="w-full relative overflow-hidden max-sm:h-[20rem]">
+    <picture data-element="hero-img" class="hero-img">
+      <img
+        src={heroImg}
+        alt="hero"
+        width="1080"
+        height="1080"
+        class="max-sm:p-4 max-sm:[object-position:0_30%] sm:[object-position:38%]"
+      />
+    </picture>
+  </div>
 </section>
 
-
 <style lang="scss">
+  .hero {
+    display: grid;
 
-    .hero{
-        display: grid;
-        gap: 2rem;
-        padding-block: clamp(2rem, 10dvw, 4rem);
-        padding-block: clamp(2rem, 10vw, 4rem);
-        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-
-        &--content{
-            display: inherit;
-            gap: 2rem;
-        }
+    &--content {
+      display: grid;
+      gap: 1rem;
     }
+  }
 
-    .hero > *:not(:last-child){
-        margin-inline: var(--padding-inline-boundaries);
+  .hero > *:not(:last-child) {
+    margin-inline: var(--padding-inline-boundaries);
+  }
+
+  .hero--name {
+    text-transform: uppercase;
+  }
+
+  .hero--icons {
+    display: flex;
+    gap: 1rem;
+
+    svg {
+      height: 44px;
+      transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      fill: currentColor;
+
+      &:hover {
+        transform: scale(1.05);
+        fill: green;
+      }
     }
+  }
 
-    .hero--name{
-        text-transform: uppercase;
-        display: grid;
-        gap: 2rem;
-
-        h1{
-            line-height: .75;
-        }
-    }
-
-    .hero--icons{
-        display: flex;
-        gap: 1rem;
-        
-        svg{
-            height: 44px;
-            transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            fill: currentColor;
-
-            &:hover{
-                transform: scale(1.05);
-                fill: green;
-            }
-        }
-    }
-
-
-    .iframe-wrapper {
-        width: max(65%, 15rem);
-        position: relative;
-        margin: 0 0 0 auto;
-        border-radius: 1rem 0 0 1rem;
-        overflow: hidden;
-
-        box-shadow: 
-        -1px 0px 1px 5px rgba(0,0,0,0.2),
-        -2px 0px 1px 10px rgba(0,0,0,0.1),
-        -3px 0px 1px 15px rgba(0,0,0,0.05),
-        -4px 0px 1px 20px rgba(0,0,0,0.025);
-
-        .dummy-padding {
-            padding-top: 106.25%;
-        }
-
-        img {
-            border: none;
-            width: 100%;
-            height: 100%;
-            inset: 0;
-            position: absolute;
-            object-fit: cover;
-            object-position: top;
-        }
-}
-
+  .hero-img img {
+    border: none;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    position: absolute;
+    object-fit: cover;
+    // object-position: top;
+  }
 </style>
-
