@@ -1,214 +1,52 @@
 ---
-import '../styles/hamburguer.scss';
-import { Icon } from 'astro-icon';
-import ButtonMenu from './ButtonMenu.astro';
-import MenuDropdown from './MenuDropdown.astro';
-// import ButtonMenu from './ButtonMenu.svelte';
-
-import { LanguageSelector } from "astro-i18next/components";
-
-let isMobile = true;
+import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
+import NavHeader from "@/components/header/NavHeader.astro";
+import { clsxm } from "@/utils/styles/tw";
+import BodyBoundaries from "@/layout/BodyBoundaries.astro";
 ---
 
-<header>
-
-    {isMobile ? 
-    <div class="header--wrapper" id="header">
-      <LanguageSelector showFlag={true} 
-      languageMapping={{ en: "", es: "" }}class="lang-selector" />
-        <button class="header--darkModeSwitch" id="darkModeBtn">
-            <span aria-hidden="true">Dark Mode</span>
-            <Icon name="theme-dark" />
-        </button>
-        <ButtonMenu className="header--menuBtn">
-            <span aria-hidden="true">Menu</span>
-            <Icon name="hamburguer" />
-        </ButtonMenu>
-        <MenuDropdown state="close"/>
+<header
+  id="main_header"
+  class:list={clsxm([])}
+  class="text-gray-600 dark:text-gray-400 body-font [grid-area:header] transition-all max-h-[4.5rem]"
+  aria-label="Main Header"
+  transition:name="header"
+>
+  <BodyBoundaries
+    className="border-b bg-pal_blackfromyellow bg-white dark:bg-zinc-950"
+  >
+    <div class="relative grid">
+      <div
+        class:list={clsxm(["flex", "supports-[display:grid]:grid"])}
+        class="flex-nowrap flex-row items-center"
+        id="menu_grid"
+      >
+        <ComponentBoundaries
+          className="max-lg:[grid-area:logo] flex flex-col ml-0"
+        >
+          <h1 class="text-2xl text-black dark:text-pal_yellow">Emilio Tapia</h1>
+          <span class="text-xs text-black dark:text-white"
+            >UI/UX Designer | Front-end</span
+          >
+        </ComponentBoundaries>
+        <NavHeader />
+      </div>
     </div>
-    :
-    <div class="wrapper">
-        
-    </div>
-    }
+  </BodyBoundaries>
 </header>
 
-<style lang="scss">
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 50;
+  }
 
-    [astro-icon] {
-        fill: var(--text-color-100);
-        width: 44px;
-    }
-    [astro-icon="theme-dark"] {
-        width: 33px;
-    }
-    
-
-
-    header{
-        .header--wrapper{
-            display: grid;
-    place-content: end;
-    place-items: center;
-    grid-auto-flow: column;
-    gap: 0.5rem;
-    padding-block: 1rem;
-    margin-inline: var(--padding-inline-boundaries);
-        }
-
-        @media (min-width: 1200px){
-          .header--wrapper{
-    margin-inline:  0;
-        }
-    }
-
-    .lang-selector{
-      appearance: none;
-      border: 0;
-      background: 0;
-      font-size: 1.6178rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin: 0;
-      width: 100%;
-      z-index: 20;
-      position: relative;
-      cursor: inherit;
-      line-height: 0.9;
-      transform: translateY(1px);
-      filter: grayscale(0.4);
-
-      option{
-        font-size: 0.5rem;
-      }
-    }
-
-    select::-ms-expand {
-      display: none;
-    }
-
-    select {
-      outline: none;
-    }
-
-    .header--langSwitch{
-      h6{
-        line-height: .75;
-        vertical-align: baseline;
-      }
-    }
-        .header--darkModeSwitch{
-            place-content: center;
-            display: grid;
-            overflow: hidden;
-            transform: translateY(-2px);
-
-        }
-
-        button{
-          z-index: 10;
-        }
-    }
-
+  #menu_grid {
+    grid-template-areas: "logo menu-btn";
+    grid-template-columns: 2fr 1fr;
+  }
 </style>
-
-<script>
-    let isDark = false;
-  
-    const setSelected = () => {
-      return isDark = !isDark;
-    }
-    
-    const changeDarkModeState = () => {
-      let modeTheme = isDark ? 'dark' : 'light';
-  
-          //   ? PORQUE NECESITA PONER UN STRING
-          if (!isDark) {
-            document.documentElement.attributes['data-color-mode'].value = modeTheme
-            // setDarkModeLocalStorage(modeTheme);
-          } else {
-            document.documentElement.attributes['data-color-mode'].value = modeTheme
-            // setDarkModeLocalStorage(modeTheme);
-          }
-
-        return modeTheme
-    }
-  
-    document.getElementById("darkModeBtn").addEventListener("click", (e) => {
-      setSelected()
-      changeDarkModeState()
-
-      const changeDarkMode=new Promise ((resolve,reject)=>{
-        return resolve (changeDarkModeState())
-          })
-
-          changeDarkMode.then((theme) => {
-            setDarkModeLocalStorage(theme)
-          })
-        })
-
-
-    // -------------------------
-// DOM Dark Mode Local Storage
-// -------------------------
-
-const setDarkModeLocalStorage = (attrib) => {
-  // SAVE DARK MODE DATA
-  localStorage.setItem('theme-mode', attrib);
-};
-
-const getDarkModeLocalStorage = () => {
-  // GET LOCAL STORAGE
-  let activeTheme = localStorage.getItem('theme-mode');
-  
-
-  if(activeTheme === null) 
-  {
-    activeTheme = 'light;'
-    localStorage.setItem('theme-mode', activeTheme);
-    // document.documentElement.setAttribute('data-color-mode', activeTheme);
-    return
-  }
-
-  if(activeTheme === 'dark') {
-    isDark = true
-    document.documentElement.setAttribute('data-color-mode', activeTheme);
-    // ONLY SET ATTRIBUTE WHEN DARK IS ON BECAUSE IS BY DEFAULT WRITTEN LIGHT IN LAYOUT
-    // IT STOPS FROM POPPING OUT WITH DELAY
-    return
-  }
-};
-getDarkModeLocalStorage();
-
-
-
-
-
-    // -------------------------
-// MENU DISPLAY
-// -------------------------
-
-    const header = document.getElementById("header")
-    const menuBtn = document.querySelector('.header--menuBtn')
-    menuBtn.addEventListener('click', () => {
-      const menu = header.querySelector('.menu')
-      const actualState = menu.getAttribute('data-state')
-      const state = actualState === 'open' ? 'close' : 'open'
-      const ariaExpanded = state === 'open' ? 'true' : 'false'
-      menu.setAttribute('data-state', state)
-      menu.setAttribute('aria-expanded', ariaExpanded)
-
-      const anchorButtons = header.querySelectorAll('.dropdown a')
-      anchorButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          menu.setAttribute('data-state', 'close')
-          menu.setAttribute('aria-expanded', 'false')
-
-          const btnMenu = document.getElementById("buttonMenu")
-          btnMenu.setAttribute('data-state', 'close');
-          btnMenu.setAttribute('aria-expanded', 'false');
-        })
-      })  
-    })
-    
-  </script>
