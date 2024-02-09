@@ -1,32 +1,30 @@
 ---
-const { url, text = ""} = Astro.props
+const { url, text = "" } = Astro.props;
 ---
 
-<button class="primary--btn">
-    <a href={url} target="_blank" rel="noopener noreferrer">
-        <span>{text}</span>
-    </a>
+<button
+  class="primary--btn bg-pal_blackfromred hover:bg-black active:bg-black border border-black text-white rounded"
+>
+  <a
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="flex items-center justify-center"
+  >
+    <span class="text-current text-base">{text}</span>
+  </a>
 </button>
 
 <style lang="scss">
+  .primary--btn {
+    font-weight: normal;
+    backdrop-filter: blur(11px) saturate(0.8);
 
-    .primary--btn{
-        font-weight: normal;
-        background: rgba($color: #FFFFFF, $alpha: .2);
-        border-radius: 4px;
-        color: currentColor;
-
-        a{
-            display: block;
-            padding-block: 0.5rem;
-            width: min(29vw, 8rem);
-        }
-
-        transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        &:hover{
-            transform: scale(1.05);
-        }
+    a {
+      padding-block: 0.5rem;
+      width: min(29vw, 8rem);
     }
-    
 
+    transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
 </style>

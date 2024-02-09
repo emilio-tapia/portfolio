@@ -1,0 +1,29 @@
+---
+import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
+import { clsxm } from "@/utils/styles/tw";
+
+type Props = {
+  color?: string;
+  bg?: string;
+  className?: string;
+};
+
+const { color = "", bg = "", className = "" } = Astro.props;
+---
+
+<ComponentBoundaries
+  className="h-full bg-white dark:bg-pal_blackfromred flex justify-center max-lg:row-start-1 "
+  class:list={clsxm([bg, className])}
+>
+  <div class="uppercase grid rounded-2xl items-center">
+    <h2
+      class=""
+      class:list={clsxm([
+        "text-black dark:text-white max-[500px]:[font-size:max(2rem,13vw)]",
+        color,
+      ])}
+    >
+      <slot />
+    </h2>
+  </div>
+</ComponentBoundaries>
