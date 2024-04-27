@@ -8,6 +8,7 @@
       "@/lib": ["src/lib/*"],
       "@/data": ["src/data/*"],
       "@/layout": ["src/layout/*"],
+      "@/screens": ["src/screens/*"],
       "@/scripts": ["src/scripts/*"],
       "@/store": ["src/store/*"],
       "@/assets": ["src/assets/*"]
