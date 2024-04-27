@@ -1,0 +1,142 @@
+{
+    "menu": {
+      "about": "About me",
+      "study": "Studies",
+      "experience": "Experience",
+      "skill": "Skills",
+      "project": "Projects",
+      "miniproject": "Miniprojects",
+      "blog": "Blog",
+      "media": "Media"
+    },
+    "hero": {
+      "description": {
+        "job1": "UI/UX", 
+        "job2": "Front-end Developer", 
+        "job3": "Sound Design", 
+        "job4": "Audiovisual Production"
+      }
+    },
+    "aboutMe": {
+      "saludo": {
+        "1": "Hello",
+        "2": "How are you?"
+      },
+      "description": {
+        "1": "I am a front-end developer, UX/UI designer & audiovisual producer.",
+        "2": "The main aspects in my professional career are the art and technology",
+        "3": "My passion relies on the interest to discover new possibilities about being interactive.",
+        "4": "As a music producer, the audiovisual / interactive subject got my profound interest, I wanted to get involved more in that field and started to dig into graphic design theory in 2018.",
+        "5": "One day I was working on an animation in After Effects. I found something called 'expressions'. It was like controlling the animation behavior by code and I really liked it.", 
+        "6": "I started to learn front-end programming in 2020.",
+        "7": "Since then I keep learning new things."
+      }
+    },
+
+
+  "study":{
+    "1":{
+      "year": "2014-2018",
+      "college": "Universidad San Francisco de Quito",
+      "bachelor": "Bachelor in Musical Production and Sound"
+    }
+  },
+
+  "experience":{
+    "1":{
+      "year": "2022-Present",
+      "jobName": "Comtelec Cia. Ltda.",
+      "roles": {
+        "1": "UI/UX and front-end implementation of the company webpage.",
+      
+        "2":"In-house design and branding.",
+        "3": "Operator of laser cutting machines."
+      }
+    },
+    "2":{
+      "year": "2021-Present",
+      "jobName": "House of Modular Synth",
+      "roles": {
+        "1": "Founder of the project.",
+        "2": "Design and construction of 'The Playroom'. A music studio dedicated to modular synthesizers.",
+        "3": "Administration and logistics tasks."
+      }
+    },
+    "3":{
+      "year": "2018-2019",
+      "jobName": "Fundación Teatro Sucre",
+      "roles": {
+        "1": "Intern of the sound department.",
+        "2": "Logistics assistant for live events in the sound area."
+      }
+    }
+  },
+
+  "skills":{
+    "professional": {
+      "name": "Professional Skills",
+      "group": {
+        "1": "Front-end development",
+        "2": "UI System Design",
+        "3": "UX Empathy Maps",
+        "4": "Web Animation Design",
+        "5": "Sound Design",
+        "6": "Audiovisual Production"
+      }
+    },
+    "soft": {
+      "name": "Soft Skills",
+      "group": {
+        "1": "Work under pressure",
+        "2": "Self-taught person",
+        "3": "Collective work"
+      }
+    }
+  },
+
+
+  "projects":{
+    "comtelec": {
+      "year": "2002-2023",
+      "name": "Comtelec Web Page",
+      "description": "Telecomunications and optical fiber business"
+    },
+    "homs": {
+      "year": "2021-2023",
+      "name": "House of Modular Synth",
+      "description": "Eurorack experience for everyone"
+    }
+  },
+
+  "footer": {
+    "goodbye": {
+      "1": "Thanks ",
+      "2": "For your visit"
+    },
+    "nav": {
+      "1": {
+        "name": "Contact",
+        "emailMe": "Email me",
+        "cv": "Download CV"
+      },
+      "2": {
+        "name": "Projects"
+      },
+      "3": {
+        "name": "Social Media"
+      }
+    }
+  },
+
+  "extra": {
+    "visitWeb": "Visit Web",
+    "takeLook": "A look of my..",
+    "aboutMy": "About my..",
+    "spareTime": "My spare time"
+  },
+
+
+      "cv": {
+        "location": "/resources/cv-emilio-tapia-en.pdf"
+    }
+}
