@@ -1,0 +1,78 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import ComponentBoundaries from "../ComponentBoundaries.astro";
+import Icon from "astro-icon";
+import TitleSectionGrid from "@/components/text/TitleSectionGrid.astro";
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
+---
+
+<section
+  class="summary grid items-start lg:grid-cols-[2fr_4fr] max-lg:divide-y lg:divide-x divide-black"
+  id="experience"
+>
+  <TitleSectionGrid color="dark:text-pal_lime">
+    {t("menu").experience}
+  </TitleSectionGrid>
+  <ComponentBoundaries
+    className="bg-[#e2e782] p-0 h-full relative overflow-hidden"
+  >
+    <nav class="grid grid-cols-[1fr] divide-y divide-black">
+      <ComponentBoundaries className="p-8 relative">
+        <Icon
+          name="info-experience"
+          class="w-8 md:w-24 md:absolute md:top-[50%] md:right-[10%] md:[translate:50%_-50%]"
+        />
+        <span>{t("experience")["1"].year}</span>
+        <h6>{t("experience")["1"].jobName}</h6>
+        <ul>
+          <li><span>{t("experience")["1"].roles["1"]}</span></li>
+          <li><span>{t("experience")["1"].roles["2"]}</span></li>
+          <li><span>{t("experience")["1"].roles["3"]}</span></li>
+          <li><span>{t("experience")["1"].roles["4"]}</span></li>
+        </ul>
+      </ComponentBoundaries>
+      <ComponentBoundaries className="p-8">
+        <span>{t("experience")["2"].year}</span>
+        <h6>{t("experience")["2"].jobName}</h6>
+        <ul>
+          <li><span>{t("experience")["2"].roles["1"]}</span></li>
+          <li><span>{t("experience")["2"].roles["2"]}</span></li>
+          <li><span>{t("experience")["2"].roles["3"]}</span></li>
+        </ul>
+      </ComponentBoundaries>
+      <ComponentBoundaries className="p-8">
+        <span>{t("experience")["3"].year}</span>
+        <h6>{t("experience")["3"].jobName}</h6>
+        <ul>
+          <li><span>{t("experience")["3"].roles["1"]}</span></li>
+          <li><span>{t("experience")["3"].roles["2"]}</span></li>
+        </ul>
+      </ComponentBoundaries>
+    </nav>
+
+    <div
+      class="absolute right-[15%] w-auto bottom-[50%] opacity-10 h-[120%] [translate:50%_50%]"
+    >
+      <Icon name="info-experience" class="w-auto h-full" />
+    </div>
+  </ComponentBoundaries>
+</section>
+
+<style lang="scss">
+  .summary--name {
+    text-transform: uppercase;
+    display: grid;
+    gap: 2rem;
+
+    h2 {
+      line-height: 0.75;
+    }
+
+    h3 {
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1[ "2"];
+    }
+  }
+</style>

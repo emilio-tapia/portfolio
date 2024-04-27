@@ -1,132 +1,164 @@
 ---
-import { Icon } from 'astro-icon';
-import { t } from "i18next";
-
+import { Icon } from "astro-icon";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
 ---
 
-<footer>
-    <div class="footer--title" >
-        <h2>{t("footer.goodbye.1")}<i id="hand"><Icon name="footer-hand"/></i></h2>
-        <h3>{t("footer.goodbye.2")}</h3>
-    </div>
-    <nav class="footer--nav">
+<footer
+  class="[grid-area:footer] border-y border-black bg-pal_white dark:bg-pal_blackfromred md:grid-cols-[2fr_1fr] divide-x divide-black items-center"
+  id="contact"
+>
+  <div class="footer--title mx-auto py-12 -mt-4 self-end px-12 w-full relative">
+    <h2 class="text-black dark:text-pal_yellow">
+      {t("footer").goodbye[0]}
+      <!-- <i id="hand"><Icon name="footer-hand" /></i> -->
+    </h2>
+    <h3 class="text-black dark:text-[#c8c8c8] leading-tight">
+      {t("footer").goodbye[1]}
+      <i id="hug"
+        ><Icon
+          name="smile-face"
+          class="min-[540px]:[translate:10%_0%] [translate:35vw_0%] scale-[2.5] min-[540px]:scale-[1.2]"
+        /></i
+      >
+    </h3>
+  </div>
+  <nav class="footer--nav">
+    <ul
+      class="divide-y divide-black child:p-4 bg-white dark:bg-[#e4d190] text-black"
+    >
+      <li>
+        <p>{t("footer").nav["1"].name}</p>
         <ul>
-            <li>
-                <p>{t("footer.nav.1.name")}</p>
-                <ul>
-                    <li><a href="mailto:emiliota95@gmail.com"><span>{t("footer.nav.1.emailMe")}</span></a></li>
-                    <li><a href="/resources/cv-emilio-tapia-es.pdf"><span>{t("footer.nav.1.cv")}</span></a></li>
-                </ul>
-            </li>
-            <li>
-                <p>{t("footer.nav.2.name")}</p>
-                <ul>
-                    <li>
-                        <a href="https://www.comtelec.com/" target="_blank" rel="noopener noreferrer">
-                            <span>Comtelec</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/houseofmodularsynthesizer/" target="_blank" rel="noopener noreferrer">
-                            <span>HoMS</span>
-                        </a>
-                    </li>
-                    
-                </ul>
-            </li>
-            <li>
-                <p>{t("footer.nav.3.name")}</p>
-                <ul>
-                    <li>
-                        <a href="https://github.com/emilio-tapia" target="_blank" rel="noopener noreferrer">
-                            <span>Github</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://www.linkedin.com/in/emilio-tapia-a24150172/" target="_blank" rel="noopener noreferrer">
-                            <span>LinkedIn</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/emilio.________/" target="_blank" rel="noopener noreferrer">
-                            <span>Instagram</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+          <li>
+            <a href="mailto:emiliota95@gmail.com"
+              ><span>{t("footer").nav["1"].emailMe}</span></a
+            >
+          </li>
+          <li>
+            <a href={t("cv").location}><span>{t("footer").nav["1"].cv}</span></a
+            >
+          </li>
         </ul>
-    </nav>
+      </li>
+      <li>
+        <p>{t("footer").nav["2"].name}</p>
+        <ul>
+          <li>
+            <a
+              href="https://www.comtelec.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Comtelec</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/houseofmodularsynthesizer/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>HoMS</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.taskmixr.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>TaskMixr</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>{t("footer").nav["3"].name}</p>
+        <ul>
+          <li>
+            <a
+              href="https://github.com/emilio-tapia"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Github</span>
+            </a>
+          </li>
 
+          <li>
+            <a
+              href="https://www.linkedin.com/in/emilio-tapia-a24150172/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/emilio.________/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Instagram</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 </footer>
 
 <style lang="scss">
+  footer {
+    display: grid;
+  }
 
-    footer{
-        padding-inline: var(--padding-inline-boundaries);
-        background: var(--bg-color-2);
-        padding-block: 2rem;
-        display: grid;
-        gap: 2rem;
+  [astro-icon="smile-face"] {
+    width: 4rem;
 
+    transform-origin: bottom;
+    display: inline-block;
+    position: relative;
+  }
+
+  h2,
+  h3,
+  p {
+    text-transform: uppercase;
+  }
+
+  p {
+    font-weight: 700;
+  }
+
+  p,
+  span {
+    color: currentColor;
+  }
+
+  .footer--nav {
+    & > ul {
+      display: grid;
     }
 
-    [astro-icon=footer-hand] {
-            fill: none;
-            width: 54px;
-            display: inline-block;
-            stroke: var(--text-color-100);
-            filter: drop-shadow(2px 1px 3px rgba(0, 0, 0, 0.2))
-        }
-
-    h2,h3,p{
-        text-transform: uppercase;
+    & > ul > li {
+      display: grid;
+      gap: 0.5rem;
+      place-content: start;
     }
-
-    :where(.footer--nav a){
-        opacity: .5;
-        transition: 0.418s;
-
-        &:hover{
-            opacity: 1;
-        }
-    }
-
-    .footer--title{
-        h3{
-            line-height: .75;
-        }
-    }
-
-    .footer--nav{
-
-        & > ul{
-            display: grid;
-            gap: 1.5rem;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        }
-
-        & > ul > li{
-            display: grid;
-            gap: 1rem;
-            place-content: start;
-        }
-    }
-
-    h3{
-        font-weight: normal;
-        font-style: italic;
-    }
+  }
 </style>
 
-<script>
-import gsap from "gsap";
+<!-- <script>
+  import gsap from "gsap";
 
-    gsap.to('#hand svg', {
-        rotate: 25,
-        duration: 0.318,
-        repeat: -1,
-        yoyoEase: true,
-    })
-</script>
-
+  gsap.to("#hand svg", {
+    rotate: 25,
+    duration: 1.618,
+    repeat: -1,
+    yoyoEase: true,
+  });
+</script> -->

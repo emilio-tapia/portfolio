@@ -1,0 +1,30 @@
+---
+import LangDropdown from "@/components/dropdown/LangDropdown.astro";
+import DarkModeSwitch from "@/components/header/DarkModeSwitch.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
+---
+
+<div class="max-sm:flex flex-col sm:h-full w-full">
+  <!-- <div
+    class="sr-only mb-4 font-bold uppercase tracking-widest custom-normal-black-blue text-right"
+    role="heading"
+    aria-level="2"
+  >
+    MENU
+  </div> -->
+  <div
+    class="grid grid-cols-[1fr_1fr] items-center h-full border-0 focus:outline-none rounded-md text-base mt-0 w-full basis-full sm:basis-[content]"
+    role="group"
+  >
+    <LangDropdown />
+
+    <DarkModeSwitch />
+    <!-- <div class="hidden sm:inline sm:h-full">
+      <ButtonSystem type="solid_white_blue" size="sm" fullHeight={true}>
+        Cotizar
+      </ButtonSystem>
+    </div> -->
+  </div>
+</div>

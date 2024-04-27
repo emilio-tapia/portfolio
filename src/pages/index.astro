@@ -1,21 +1,42 @@
 ---
-import { changeLanguage } from "i18next";
-import Layout from "../layout/Layout.astro";
-import Header from "../components/Header.astro";
-import Hero from "../layout/home/Hero.astro";
-import AboutMe from "../layout/home/AboutMe.astro";
+import Base from "@/layout/Base.astro";
+import Body from "@/layout/Body.astro";
+import Head from "@/layout/Head.astro";
+import Hero from "@/layout/home/Hero.astro";
+import AboutMe from "@/layout/home/AboutMe.astro";
 import InfoSection from "../layout/home/InfoSection.astro";
-import Footer from "../components/Footer.astro";
-
-changeLanguage("en");
+import LinksNavigation from "@/layout/home/LinksNavigation.astro";
+import StudySection from "@/layout/home/StudySection.astro";
+import ExperienceSection from "@/layout/home/ExperienceSection.astro";
+import SkillSection from "@/layout/home/SkillSection.astro";
+import ProjectsSection from "@/layout/home/ProjectsSection.astro";
+import ProgrammingSection from "@/layout/home/ProgrammingSection.astro";
 ---
 
-<Layout>
-
-<Header/>
-<Hero/>
-<AboutMe/>
-<InfoSection/>
-<Footer/>
-
-</Layout>
+<Base>
+  <Head title="Emilio Tapia">
+    <style>
+      #app {
+        display: grid;
+        grid-template-areas:
+          "header"
+          "main"
+          "footer";
+        grid-template-rows: auto 1fr auto;
+        scroll-snap-type: y mandatory;
+        scroll-margin-top: 5rem;
+      }
+    </style>
+  </Head>
+  <Body>
+    <Hero />
+    <div class="hidden md:block"><LinksNavigation /></div>
+    <AboutMe />
+    <StudySection />
+    <ExperienceSection />
+    <SkillSection />
+    <ProgrammingSection />
+    <ProjectsSection />
+    <!-- <InfoSection /> -->
+  </Body>
+</Base>

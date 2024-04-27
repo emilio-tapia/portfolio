@@ -1,0 +1,74 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import ComponentBoundaries from "../ComponentBoundaries.astro";
+import Icon from "astro-icon";
+import CarouselSkills from "@/components/CarouselSkills.astro";
+import TitleSectionGrid from "@/components/text/TitleSectionGrid.astro";
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
+---
+
+<section
+  class="summary grid items-start lg:grid-cols-[4fr_2fr] max-lg:divide-y lg:divide-x divide-black"
+  id="skills"
+>
+  <ComponentBoundaries
+    className="bg-[#98a4f5] p-0 h-full relative overflow-hidden "
+  >
+    <section
+      class="grid min-[600px]:grid-cols-2 max-[600px]:divide-y min-[600px]:divide-x divide-black"
+    >
+      <ComponentBoundaries className="p-8">
+        <Icon name="info-skills" class="w-8 mb-4" />
+        <div class="skill-group">
+          <h6>{t("skills").professional.name}</h6>
+          <ul>
+            <li><span>{t("skills").professional.group["1"]}</span></li>
+            <li><span>{t("skills").professional.group["2"]}</span></li>
+            <li><span>{t("skills").professional.group["3"]}</span></li>
+            <li><span>{t("skills").professional.group["4"]}</span></li>
+            <li><span>{t("skills").professional.group["5"]}</span></li>
+            <li><span>{t("skills").professional.group["6"]}</span></li>
+          </ul>
+        </div>
+      </ComponentBoundaries>
+      <ComponentBoundaries className="p-8">
+        <Icon name="info-skills" class="w-8 mb-4" />
+        <div class="skill-group">
+          <h6>{t("skills").soft.name}</h6>
+          <ul>
+            <li><span>{t("skills").soft.group["1"]}</span></li>
+            <li><span>{t("skills").soft.group["2"]}</span></li>
+            <li><span>{t("skills").soft.group["3"]}</span></li>
+          </ul>
+        </div>
+      </ComponentBoundaries>
+    </section>
+    <div
+      class="absolute right-[15%] w-auto bottom-[50%] opacity-10 h-[120%] [translate:50%_50%]"
+    >
+      <Icon name="info-skills" class="w-auto h-full" />
+    </div>
+  </ComponentBoundaries>
+  <TitleSectionGrid color="dark:text-[#98a4f5]">
+    {t("menu").skill}
+  </TitleSectionGrid>
+</section>
+
+<style lang="scss">
+  .summary--name {
+    text-transform: uppercase;
+    display: grid;
+    gap: 2rem;
+
+    h2 {
+      line-height: 0.75;
+    }
+
+    h3 {
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.2;
+    }
+  }
+</style>

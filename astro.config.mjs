@@ -1,13 +1,23 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
+import tailwind from "@astrojs/tailwind";
+import sitemap from "@astrojs/sitemap";
 
-import svelte from '@astrojs/svelte';
-
-// https://astro.build/config
-import image from "@astrojs/image";
-
-import astroI18next from "astro-i18next";
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [svelte(), image(), astroI18next()]
+  site: "https://emilio-tapia.com",
+  integrations: [tailwind(), sitemap({
+    i18n: {
+      defaultLocale: "es",
+      locales: ["es", "en", "fr"],
+      routing: {
+        prefixDefaultLocale: false
+      },
+      fallback: {
+        fr: "es",
+        en: "es"
+      }
+    }
+  }), react()]
 });

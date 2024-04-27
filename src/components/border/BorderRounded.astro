@@ -1,0 +1,25 @@
+---
+import { clsxm } from "@/utils/styles/tw";
+
+type Props = {
+  style?: string;
+  paddingUnit?: number;
+  bgBlue?: boolean;
+};
+
+const { style = "", paddingUnit = 3, bgBlue = false } = Astro.props;
+---
+
+<div
+  class:list={clsxm([
+    `${"p-" + paddingUnit}`,
+    " rounded-3xl w-full custom-border-color border transition-all ",
+    {
+      "dark:bg-blue_dark-300/50 hover:dark:bg-blue_dark-300 bg-slate-100/50 hover:bg-slate-200/40":
+        bgBlue,
+    },
+    style,
+  ])}
+>
+  <slot />
+</div>
