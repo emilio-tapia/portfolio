@@ -7,17 +7,21 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: "https://emilio-tapia.com",
-  integrations: [tailwind(), sitemap({
-    i18n: {
-      defaultLocale: "es",
-      locales: ["es", "en", "fr"],
-      routing: {
-        prefixDefaultLocale: false
+  integrations: [
+    tailwind(),
+    sitemap({
+      i18n: {
+        defaultLocale: "es",
+        locales: ["es", "en", "fr"],
+        routing: {
+          prefixDefaultLocale: false,
+        },
+        fallback: {
+          fr: "es",
+          en: "es",
+        },
       },
-      fallback: {
-        fr: "es",
-        en: "es"
-      }
-    }
-  }), react()]
+    }),
+    react(),
+  ],
 });
