@@ -6,6 +6,6 @@ type Props = {
 const { className = "" } = Astro.props;
 ---
 
-<div data-boundaries class:list={clsxm(["px-4 py-3", className])}>
+<div data-boundaries class={clsxm(["px-4 py-3", className])}>
   <slot />
 </div>

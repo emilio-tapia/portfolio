@@ -5,25 +5,23 @@ import Header from "@/components/Header.astro";
 import DarkMode from "@/scripts/theme/DarkMode.astro";
 import BodyBoundaries from "./BodyBoundaries.astro";
 import MenuMobileOverlay from "@/components/header/MenuMobileOverlay.astro";
+import { clsxm } from "@/utils/styles/tw";
+const isTrue = true;
 ---
 
 <body>
   <DarkMode />
 
-  <div
-    id="app"
-    class="bg-pal_white bg-[#393939] dark:bg-pal_dark menu-mobile-overlay min-h-[100dvh]"
-  >
+  <div id="app" class={clsxm(["bg_body dark:bg-pal_dark", "min-h-inh"])}>
     <Header />
-    <BodyBoundaries className="@container/main">
+    <!-- <BodyBoundaries className="@container/main">
       <div class="[grid-area:main] mt-[4.5rem] divide-y divide-black">
         <slot />
       </div>
       <Footer />
-      <BodyBoundaries />
 
       <MenuMobileOverlay />
-    </BodyBoundaries>
+    </BodyBoundaries> -->
   </div>
 
   <!-- <script src="@/scripts/tailwind/tailwindBreakpoint.js"></script> -->

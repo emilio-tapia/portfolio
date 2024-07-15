@@ -3,18 +3,23 @@ import { clsxm } from "@/utils/styles/tw";
 type Props = {
   className?: string;
   height?: "full" | "auto";
+  width?: "xl" | "2xl";
+  padX?: 0 | 1 | 2;
 };
-const { className = "", height = "auto" } = Astro.props;
+const { className = "", height = "auto", width = "xl", padX = 0 } = Astro.props;
 ---
 
 <div
   data-boundaries
-  class:list={clsxm([
-    "max-w-7xl mx-auto",
-    "xl:border-x border-black",
+  class={clsxm([
+    "mx-auto",
+    { "w-full_p1": padX === 1 },
+    { "w-full_p2": padX === 2 },
+    { "max-w-screen-xl": width === "xl" },
+    { "max-w-screen-2xl": width === "2xl" },
     { "h-screen h-[100dvh]": height === "full" },
     { "h-auto": height === "auto" },
-    // "lg:!max-w-5xl"
+    // "xl:border-x border-black",
     className,
   ])}
 >

@@ -7,18 +7,22 @@ import BodyBoundaries from "@/layout/BodyBoundaries.astro";
 
 <header
   id="main_header"
-  class:list={clsxm([])}
-  class="text-gray-600 dark:text-gray-400 body-font [grid-area:header] transition-all max-h-[4.5rem]"
+  class="[grid-area:header]"
   aria-label="Main Header"
   transition:name="header"
 >
   <BodyBoundaries
-    className="border-b bg-pal_blackfromyellow bg-white dark:bg-zinc-950"
+    width="2xl"
+    padX={1}
+    className="border-b bg-white dark:bg-zinc-950 my-4 rounded-md border border-black"
   >
     <div class="relative grid">
       <div
-        class:list={clsxm(["flex", "supports-[display:grid]:grid"])}
-        class="flex-nowrap flex-row items-center"
+        class={clsxm([
+          "flex",
+          "supports-[display:grid]:grid",
+          "flex-nowrap flex-row items-center",
+        ])}
         id="menu_grid"
       >
         <ComponentBoundaries
