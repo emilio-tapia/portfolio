@@ -154,26 +154,24 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-      backgroundImage: {
-        // "blue-img":
-        //   'url("https://images.unsplash.com/photo-1523633589114-88eaf4b4f1a8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fit=crop&w=460&h=340&q=100")',
-        // "green-img":
-        //   'url("https://images.unsplash.com/photo-1488330890490-c291ecf62571?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fit=crop&w=460&h=340&q=100")',
-        // "purple-img":
-        //   'url("https://images.unsplash.com/photo-1511800453077-8c0afa94175f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fit=crop&w=460&h=340&q=100")',
-        // "red-img":
-        //   'url("https://images.unsplash.com/photo-1519181245277-cffeb31da2e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fit=crop&w=460&h=340&q=100")',
-        // "yellow-img":
-        //   'url("https://images.unsplash.com/photo-1485550409059-9afb054cada4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fit=crop&w=460&h=340&q=100")',
-      },
-      minHeight: {
-        14: "3.5rem",
-      },
-      minWidth: {
-        14: "3.5rem",
-      },
+      // backgroundImage: {
+      // "blue-img":
+      //   'url("https://images.unsplash.com/photo-1523633589114-88eaf4b4f1a8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fit=crop&w=460&h=340&q=100")',
+      // },
+      // minHeight: {
+      //   14: "3.5rem",
+      // },
+      // minWidth: {
+      //   14: "3.5rem",
+      // },
       transitionTimingFunction: {
         "in-out": "cubic-bezier(0.2, 1, 0.25, 1)",
+      },
+      width: {
+        full_p1: "calc(100% - theme(space.8))",
+        full_p2: "calc(100% - theme(space.16))",
+        full_p3: "calc(100% - theme(space.32))",
+        full_p4: "calc(100% - theme(space.64))",
       },
     },
   },
@@ -184,15 +182,9 @@ export default {
     },
     function ({ addUtilities, addComponents, e, prefix, config }) {
       const newUtilities = {
-        ".horizontal-tb": {
-          writingMode: "horizontal-tb",
-        },
-        ".vertical-rl": {
-          writingMode: "vertical-rl",
-        },
-        ".vertical-lr": {
-          writingMode: "vertical-lr",
-        },
+        ".overflow-init": { overflow: "initial" },
+        ".overflow-inh": { overflow: "inherit" },
+        ".min-h-inh": { minHeight: "inherit" },
       };
       addUtilities(newUtilities);
     },
