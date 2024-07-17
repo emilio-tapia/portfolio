@@ -1,27 +1,36 @@
 ---
 import Footer from "@/components/Footer.astro";
+import ShapeCornerDown from "@/components/shapes/corner/ShapeCornerDown.astro";
 import Header from "@/components/Header.astro";
 // import MenuMobileOverlay from "@/components/header/MenuMobileOverlay.astro";
 import DarkMode from "@/scripts/theme/DarkMode.astro";
 import BodyBoundaries from "./BodyBoundaries.astro";
 import MenuMobileOverlay from "@/components/header/MenuMobileOverlay.astro";
 import { clsxm } from "@/utils/styles/tw";
+import ShapeCornerUp from "@/components/shapes/corner/ShapeCornerUp.astro";
+import BlobHero from "@/components/shapes/blobs/BlobHero.astro";
+import BlobElement1 from "@/components/shapes/blobs/BlobElement_1.astro";
 const isTrue = true;
 ---
 
 <body>
   <DarkMode />
 
-  <div id="app" class={clsxm(["bg_body dark:bg-pal_dark", "min-h-inh"])}>
+  <div
+    id="app"
+    class={clsxm(["bg_body dark:bg-pal_dark", "min-h-inh", "relative"])}
+  >
+    <ShapeCornerUp />
+    <ShapeCornerDown />
     <Header />
+    <slot />
     <!-- <BodyBoundaries className="@container/main">
       <div class="[grid-area:main] mt-[4.5rem] divide-y divide-black">
-        <slot />
       </div>
-      <Footer />
-
+      
       <MenuMobileOverlay />
-    </BodyBoundaries> -->
+      </BodyBoundaries> -->
+    <Footer />
   </div>
 
   <!-- <script src="@/scripts/tailwind/tailwindBreakpoint.js"></script> -->

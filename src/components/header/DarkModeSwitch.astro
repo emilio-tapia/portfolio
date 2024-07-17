@@ -14,24 +14,19 @@ const iconPaths = {
 };
 ---
 
-<ComponentBoundaries
-  className="flex items-center justify-center border-l border-black bg-[#3870d0] p-0 h-[4.5rem] md:h-full"
->
+<ComponentBoundaries className="flex items-center justify-center p-0">
   <!-- Store the message prop as a data attribute. -->
   <dark-switch class="flex" aria-label="Dark Mode Switch">
     <div
-      class="flex text-xs font-semibold leading-5 child:w-auto child:py-2 child:px-4 child:duration-300 border border-black rounded-lg overflow-hidden"
+      class="flex text-xs font-semibold leading-5 child:w-auto child:py-2 child:px-4 child:duration-300 overflow-hidden rounded-[0.65rem] text-white"
     >
-      <button
+      <!-- <button
         data-theme-switch="light"
-        class="bg-black dark:!bg-transparent text-white dark:text-black"
+        class=""
       >
         <Icon name={iconPaths.lightMode} class="fill-current w-5" />
-      </button>
-      <button
-        data-theme-switch="dark"
-        class="bg-transparent text-black dark:bg-black dark:text-white"
-      >
+      </button> -->
+      <button data-theme-switch="dark" class="grad_dark-gb2">
         <Icon name={iconPaths.darkMode} class="fill-current w-5" />
       </button>
     </div>

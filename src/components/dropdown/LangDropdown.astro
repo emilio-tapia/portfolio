@@ -4,6 +4,7 @@ import { languages } from "../../i18n/ui";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import { clsxm } from "@/utils/styles/tw";
 import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
+import ButtonChevronDown from "../icons/arrows/ButtonChevronDown.astro";
 const currentLang = getLangFromUrl(Astro.url);
 const t = useTranslations(currentLang);
 ---
@@ -12,41 +13,39 @@ const t = useTranslations(currentLang);
   class="relative text-left dropdown h-full flex items-center"
   aria-label="Language Dropdown"
 >
-  <span class="block h-full w-full">
-    <ComponentBoundaries
-      className="flex items-center md:border-l border-black bg-pal_yellow p-0 h-[4.5rem] md:h-full"
+  <!-- BUTTON -->
+  <div class="block h-full w-full">
+    <button
+      class="flex items-center grad_dark-gb pr-[0.9rem] pl-[1.2rem] py-[0.4rem] rounded-[0.65rem] font-euclid"
+      type="button"
+      data-dropdown="button"
+      aria-haspopup="true"
+      aria-expanded="false"
+      aria-controls="lang-controls"
     >
-      <button
-        class="inline-flex gap-2 justify-center w-full leading-5 transition duration-150 ease-in-out focus:outline-none focus:shadow-outline-blue h-full items-center text-black"
-        type="button"
-        data-dropdown="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-        aria-controls="lang-controls"
+      <div
+        class="inline-flex gap-2 justify-center w-full leading-5 transition duration-150 ease-in-out focus:outline-none focus:shadow-outline-blue h-full items-center text-white"
       >
         <span class=""
           ><Icon
             name="lang"
-            class="w-6 [stroke-width:1.1px] stroke-black"
+            class="w-5 [stroke-width:1.1px] stroke-white"
           /></span
         >
-        <span class="text-black text-base uppercase">{currentLang}</span>
-        <svg class="w-6 h-6 -mr-1" viewBox="0 0 20 20" fill="currentColor"
-          ><path
-            fill-rule="evenodd"
-            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-            clip-rule="evenodd"></path></svg
-        >
-      </button>
-    </ComponentBoundaries>
-  </span>
+        <span class="text-white">{languages[currentLang][currentLang]}</span>
+
+        <ButtonChevronDown stroke="currentColor" className="w-6 h-6" />
+      </div>
+    </button>
+  </div>
+  <!-- DROPDOWN -->
   <div
     class={clsxm([
       " absolute right-0 bottom-0",
       "transition-all duration-300",
       "scale-95 w-full",
+      "opacity-0 invisible dropdown-menu hidden",
     ])}
-    class="opacity-0 invisible dropdown-menu"
   >
     <div
       class={clsxm([

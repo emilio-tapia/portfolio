@@ -5,10 +5,19 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sfpro: ["SF Pro Text", "system-ui", "sans-serif"],
-        oswald: ["Oswald", "system-ui", "sans-serif"],
+        // sfpro: ["SF Pro Text", "system-ui", "sans-serif"],
+        // oswald: ["Oswald", "system-ui", "sans-serif"],
+        museo: ["MuseoModerno", "system-ui", "sans-serif"],
+        euclid: ["Euclid Circular A", "system-ui", "sans-serif"],
       },
       colors: {
+        ligth: {
+          p: "#404553",
+          label: "#93959A",
+        },
+        pale: {
+          100: "#F5F6F7",
+        },
         matisse: {
           25: "hsl(214, 47%, 98%)",
           50: "hsl(214, 47%, 97%)",
@@ -185,6 +194,7 @@ export default {
         ".overflow-init": { overflow: "initial" },
         ".overflow-inh": { overflow: "inherit" },
         ".min-h-inh": { minHeight: "inherit" },
+        ".text-size-inh": { fontSize: "inherit" },
       };
       addUtilities(newUtilities);
     },
