@@ -3,11 +3,8 @@ import LangDropdown from "@/components/dropdown/LangDropdown.astro";
 import DarkModeSwitch from "@/components/header/DarkModeSwitch.astro";
 ---
 
-<div class="max-sm:flex flex-col sm:h-full w-full">
-  <div
-    class="grid grid-cols-[1fr_1fr] items-center h-full border-0 focus:outline-none rounded-md text-base mt-0 w-full basis-full sm:basis-[content]"
-    role="group"
-  >
+<div class="py-3">
+  <div class="flex items-center gap-2" role="group">
     <LangDropdown />
 
     <DarkModeSwitch />

@@ -1,0 +1,33 @@
+---
+import ButtonChevronDown from "@/components/icons/arrows/ButtonChevronDown.astro";
+import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
+---
+
+<section class="self-stretch">
+  <ComponentBoundaries className="p-12 shape-1 mx-auto">
+    <div class="grid [grid-template-rows:_auto_1fr_auto]
+    h-[88%]">
+      <span class="text-ligth-label text-center font-medium text-lg"
+        >Bienvenido, soy</span
+      >
+      <div
+        class="*:font-semibold mt-4 *:block *:text-center *:grad_ligth-gb *:text-gradient"
+      >
+        <h2 class="text-6xl">Diseñador</h2>
+        <h2 class="text-8xl">UI/UX</h2>
+      </div>
+      <div class="text-ligth-label text-center">
+        <span>La interactividad es el mejor camino.</span>
+      </div>
+    </div>
+  </ComponentBoundaries>
+  <div
+    class="absolute rounded-[1.35rem] px-5 bottom-[1.4%] left-1/2 -translate-x-1/2 border border-ligth-p"
+  >
+    <button class="flex"
+      ><div class="flex items-center mr-[0.8rem] ml-[0.1rem] text-ligth-p">
+        <ButtonChevronDown /> Conoce más
+      </div></button
+    >
+  </div>
+</section>

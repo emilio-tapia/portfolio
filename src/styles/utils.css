@@ -1,4 +1,5 @@
 @layer utilities {
+  /* BODY BACKGROUND (RADIAL GRADIEN + GRAY) */
   .bg_body {
     background: radial-gradient(
         242.79% 113.57% at 50% -8.56%,
@@ -8,5 +9,54 @@
         rgba(31, 72, 220, 0) 100%
       ),
       #f5f6f7;
+  }
+
+  /* ******************************** GRADIENTS ************************************* */
+
+  /* GRADIENT DARK GREEN BLUE */
+  .grad_dark-gb {
+    background: linear-gradient(
+      270deg,
+      #2f6d83 0%,
+      #3a6373 33%,
+      #31617c 66%,
+      #2b669c 100%
+    );
+  }
+  .grad_dark-gb2 {
+    background: linear-gradient(260.85deg, #055872 6.94%, #104e96 100%);
+  }
+
+  /* GRADIENT ligth GREEN BLUE */
+  .grad_ligth-gb {
+    background: linear-gradient(
+      270deg,
+      #2399b3 0%,
+      #299cab 33%,
+      #3196d0 66%,
+      #2890f1 100%
+    );
+  }
+
+  /* GRADIENT ligth BLUE */
+  .grad_ligth-blue {
+    /* background: linear-gradient(270deg, #1e6cb4 0%, #1a93c7 100%); */
+    background: linear-gradient(270deg, #185490 0%, #167db1 100%);
+  }
+
+  /* GRADIENT WHITE */
+  .grad_white {
+    background: linear-gradient(
+      180deg,
+      rgba(240, 240, 240, 0.8) 0%,
+      rgba(224, 224, 224, 0.8) 86%,
+      rgba(214, 214, 214, 0.64) 100%
+    );
+  }
+
+  /* ******************************** TEXT ************************************* */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    text-fill-color: transparent;
   }
 }
