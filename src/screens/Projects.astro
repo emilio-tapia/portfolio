@@ -1,0 +1,256 @@
+---
+import ButtonChevronDown from "@/components/icons/arrows/ButtonChevronDown.astro";
+import ButtonChevronRight from "@/components/icons/arrows/ButtonChevronRight.astro";
+import Comtelec from "@/components/icons/job/Comtelec.astro";
+import Homs from "@/components/icons/job/Homs.astro";
+import BodyBoundaries from "@/layout/BodyBoundaries.astro";
+import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
+---
+
+<BodyBoundaries width="2xl" padX={1} className="self-stretch w-full">
+  <section class="gridTemplate h-full gap-[2dvw]">
+    <ComponentBoundaries className="p-0 w-[100%] h-full self-end relative ">
+      <div
+        class="h-full z-[1] backdrop-blur-md px-[1rem] flex justify-between flex-col"
+      >
+        <div class="space-y-2">
+          <span
+            class="text-ligth-p dark:text-dark-p text-center font-medium text-3xl"
+            >Proyectos</span
+          >
+          <p class="max-w-[48ch] text-ligth-label2 dark:text-dark-p2">
+            Permite contarte un poco de mi. Soy un profesional dedicado
+            desarrollo web/movil y diseño de interface centrado en el usuario.
+            Tengo varias más habilidades como la automatización de procesos,
+            manejo de bases de datos, producción multimedia.
+          </p>
+        </div>
+        <div class="flex gap-8 flex-col">
+          <div>
+            <span
+              class="text-ligth-p2 dark:text-dark-label text-center font-medium text-xl"
+              >La interactividad</span
+            >
+            <p class="text-ligth-label2 dark:text-dark-p2">
+              Experiencia en desarrollo.
+            </p>
+          </div>
+          <a href="/contact">
+            <button
+              class="rounded-[1.35rem] px-5 border border-solid buttonbehavior"
+            >
+              <div class="flex items-center mr-[0.8rem] ml-[0.1rem]">
+                <ButtonChevronRight /> Contacto
+              </div>
+            </button>
+          </a>
+        </div>
+      </div>
+    </ComponentBoundaries>
+    <ComponentBoundaries
+      className="cardLayout before:[background:linear-gradient(88deg,#12296733_50%,transparent 60%)] dark:before:[background:linear-gradient(88deg,black,transparent)] p-0 mr-auto w-[100%] h-full self-end relative "
+    >
+      <div
+        class="cardOverflow absolute shape-theme-navigation h-full rounded-[2.2rem] z-[1] backdrop-blur-md px-[2rem] py-[1.75rem] grid gap-4 grid-rows-[1fr_auto]"
+      >
+        <div class="grid grid-cols-3 gap-4 *:aspect-square *:rounded-[2.2rem]">
+          <div class="shape-theme overflow-hidden">
+            <div class="mx-auto h-full">
+              <div
+                class="relative flex flex-col min-w-0 break-words bg-white w-full rounded-lg bg-[#f3f3f2] h-full"
+              >
+                <div
+                  class="max-h-40 w-full mx-auto rounded-t-xl overflow-hidden [mask-image:linear-gradient(2deg,transparent_0%,#000_0%)]"
+                >
+                  <img
+                    alt="..."
+                    src="bpm.jpg"
+                    class="w-full h-full align-middle object-cover scale-[2.2] [object-position:0%_-10%] -rotate-12 relative -left-[10%]"
+                  />
+                </div>
+                <blockquote class="relative py-6 px-8 mb-4">
+                  <svg
+                    preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 583 95"
+                    class="absolute -scale-x-[1] left-0 w-[110%] block h-[10rem] top-0 -translate-y-full"
+                  >
+                    <polygon
+                      points="-30,95 583,95 583,65"
+                      class="text-[#f3f3f2] fill-current"></polygon>
+                  </svg>
+                  <Comtelec
+                    className="h-6 -ml-[0.3rem] -mt-3 mb-3 saturate-50"
+                  />
+                  <h4 class="text-xl font-bold text-ligth-p">
+                    Automatización BPM
+                  </h4>
+
+                  <p class="text-sm font-light mt-1 text-ligth-p truncate">
+                    Diseño BPM - Desarrollo Backend
+                  </p>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+          <div class="shape-theme overflow-hidden">
+            <div class="mx-auto h-full">
+              <div
+                class="relative flex flex-col min-w-0 break-words bg-white w-full rounded-lg bg-[#f3f3f2] h-full"
+              >
+                <div
+                  class="max-h-40 w-full mx-auto rounded-t-xl overflow-hidden [mask-image:linear-gradient(2deg,transparent_0%,#000_0%)]"
+                >
+                  <img
+                    alt="..."
+                    src="web.png"
+                    class="w-full h-full align-middle object-cover relative scale-[3] -left-[31%] [object-position:0_30%] -rotate-3"
+                  />
+                </div>
+                <blockquote class="relative py-6 px-8 mb-4">
+                  <svg
+                    preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 583 95"
+                    class="absolute -scale-x-[1] left-0 w-[110%] block h-[10rem] transla top-0 -translate-y-full"
+                  >
+                    <polygon
+                      points="-30,95 583,95 583,65"
+                      class="text-[#f3f3f2] fill-current"></polygon>
+                  </svg>
+                  <Comtelec
+                    className="h-6 -ml-[0.3rem] -mt-3 mb-3 saturate-50"
+                  />
+                  <h4 class="text-xl font-bold text-ligth-p">Página web</h4>
+
+                  <p class="text-sm font-light mt-1 text-ligth-p truncate">
+                    Diseño UI/UX - Desarrollo Front-end
+                  </p>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+          <div class="shape-theme overflow-hidden">
+            <div class="mx-auto h-full">
+              <div
+                class="relative flex flex-col min-w-0 break-words bg-white w-full rounded-lg bg-[#f3f3f2] bg-pink-500 h-full"
+              >
+                <div
+                  class="max-h-40 w-full mx-auto rounded-t-xl overflow-hidden [mask-image:linear-gradient(2deg,transparent_0%,#000_0%)]"
+                >
+                  <img
+                    alt="..."
+                    src="taskmixr.png"
+                    class="w-full h-full align-middle object-cover relative scale-[2.5] left-[72%] top-[36%] -rotate-3"
+                  />
+                </div>
+                <blockquote class="relative py-6 px-8 mb-4">
+                  <svg
+                    preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 583 95"
+                    class="absolute -scale-x-[1] left-0 w-[110%] block h-1[10rem] transla top-0 -translate-y-full"
+                  >
+                    <polygon
+                      points="-30,95 583,95 583,65"
+                      class="text-[#f3f3f2] fill-current"></polygon>
+                  </svg>
+                  <label for="" class="text-ligth-p/60 text-sm"
+                    >Proyecto Personal</label
+                  >
+                  <h4 class="text-xl font-bold text-ligth-p mt-4">TaskMixr</h4>
+
+                  <p class="text-sm font-light mt-1 text-ligth-p truncate">
+                    Diseño UI/UX - Desarrollo Fullstack
+                  </p>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 *:rounded-[2.2rem] h-[15rem]">
+          <div class="shape-theme p-8 overflow-hidden">
+            <div class="grid sm:grid-cols-2">
+              <div class="flex flex-col justify-between relative z-10">
+                <div class="relative w-16 flex">
+                  <Homs />
+                </div>
+                <div class="space-y-2">
+                  <h2
+                    class="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white"
+                  >
+                    The Playroom
+                  </h2>
+                  <p class="dark:text-gray-300 text-gray-700">Administración</p>
+                </div>
+              </div>
+              <div
+                fulloverflow-hidden-lg
+                relative
+                -right-[45%]
+                scale-[2.5]
+                [mask-image:linear-gradient(91deg,transparent_0%,black70%)]"
+              >
+                <img src="playroom.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="shape-theme p-8 overflow-hidden">
+            <div class="grid sm:grid-cols-2">
+              <div class="flex flex-col justify-between relative z-10">
+                <div class="relative w-28 flex">
+                  <Comtelec className="saturate-50" />
+                </div>
+                <div class="space-y-2">
+                  <h2
+                    class="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white"
+                  >
+                    Design System
+                  </h2>
+                  <p class="dark:text-gray-300 text-gray-700">
+                    Diseño + Documentación
+                  </p>
+                </div>
+              </div>
+              <div
+                fulloverflow-hidden-lg
+                relative
+                -right-[45%]
+                scale-[2.5]
+                [mask-image:linear-gradient(91deg,transparent_0%,black70%)]"
+              >
+                <img src="playroom.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ComponentBoundaries>
+  </section>
+</BodyBoundaries>
+
+<style is:inline>
+  .gridTemplate {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+  }
+  .cardOverflow {
+    width: 110%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cardLayout::before {
+    content: "";
+    top: 50%;
+    left: 0;
+    border-radius: 30px;
+    translate: -40% -50%;
+    position: absolute;
+    aspect-ratio: 1/1;
+    filter: blur(17px);
+    height: 96%;
+    width: 1%;
+    z-index: 1;
+  }
+</style>

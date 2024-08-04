@@ -7,7 +7,7 @@ import BodyBoundaries from "@/layout/BodyBoundaries.astro";
 
 <header
   id="main_header"
-  class="[grid-area:header]"
+  class="[grid-area:header] z-10"
   aria-label="Main Header"
   transition:name="header"
 >
@@ -22,11 +22,15 @@ import BodyBoundaries from "@/layout/BodyBoundaries.astro";
         id="menu_grid"
       >
         <ComponentBoundaries
-          className="max-lg:[grid-area:logo] flex flex-col ml-0"
+          className="max-lg:[grid-area:logo] flex flex-col ml-0 w-fit"
         >
-          <h1 class="text-3xl grad_dark-gb text-gradient font-normal">
-            <span class="text-size-inh font-extrabold">Emilio</span>Tapia
-          </h1>
+          <a href="/" class="w-fit">
+            <h1
+              class="text-3xl grad_dark-gb text-gradient dark:text-gradient dark:grad_whiteDarkT font-normal"
+            >
+              <span class="text-size-inh font-extrabold">Emilio</span>Tapia
+            </h1></a
+          >
           <!-- <span class="text-xs text-black dark:text-white"
             >UI/UX Designer | Front-end</span
           > -->

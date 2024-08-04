@@ -1,0 +1,40 @@
+---
+type Props = {
+  className?: string;
+};
+
+const { className = "" } = Astro.props;
+---
+
+<svg
+  class={className}
+  width="136"
+  height="136"
+  viewBox="0 0 136 136"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <rect
+    opacity="0.876"
+    x="105.04"
+    y="127.032"
+    width="130.683"
+    height="49.8097"
+    rx="24.9048"
+    transform="rotate(-142.785 105.04 127.032)"
+    fill="url(#paint0_linear_630_8)"></rect>
+  <defs>
+    <linearGradient
+      id="paint0_linear_630_8"
+      x1="170.382"
+      y1="176.841"
+      x2="170.382"
+      y2="127.032"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stop-color="#F9C068"></stop>
+      <stop offset="0.335" stop-color="#D7A65A"></stop>
+      <stop offset="1" stop-color="#93713D"></stop>
+    </linearGradient>
+  </defs>
+</svg>

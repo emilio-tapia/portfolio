@@ -20,32 +20,63 @@ const iconPaths = {
     <div
       class="flex text-xs font-semibold leading-5 child:w-auto child:py-2 child:px-4 child:duration-300 overflow-hidden rounded-[0.65rem] text-white"
     >
-      <!-- <button
-        data-theme-switch="light"
-        class=""
+      <button
+        data-theme-current="light"
+        class="grad_dark-gb2 dark:grad_darkpurpleOpa"
       >
-        <Icon name={iconPaths.lightMode} class="fill-current w-5" />
-      </button> -->
-      <button data-theme-switch="dark" class="grad_dark-gb2">
-        <Icon name={iconPaths.darkMode} class="fill-current w-5" />
+        <Icon
+          name={iconPaths.lightMode}
+          data-light
+          class="fill-current w-5 hidden dark:block"
+        />
+        <Icon
+          name={iconPaths.darkMode}
+          data-dark
+          class="fill-current w-5 dark:hidden"
+        />
       </button>
     </div>
   </dark-switch>
 </ComponentBoundaries>
 
 <script>
-  import { setDarkMode, setLightMode } from "@/scripts/theme/darkMode";
+  import {
+    setDarkMode,
+    setLightMode,
+    setupDarkMode,
+  } from "@/scripts/theme/darkMode";
 
   class DarkModeSwitch extends HTMLElement {
     constructor() {
       super();
       const buttons = this.querySelectorAll("button");
       buttons.forEach((btn) => {
+        // SETUP SWITCH
+        if (
+          localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          btn.setAttribute("data-theme-current", "dark");
+        } else {
+          btn.setAttribute("data-theme-current", "light");
+        }
+
         btn.addEventListener("click", (e) => {
           const element = e.currentTarget as HTMLElement;
-          const selectedTheme = element.dataset.themeSwitch;
-          if (selectedTheme === "dark") setDarkMode();
-          if (selectedTheme === "light") setLightMode();
+          const currentTheme = element.dataset.themeCurrent;
+          console.log(element);
+          console.log(currentTheme);
+          if (currentTheme === "dark") {
+            setLightMode();
+            element.setAttribute("data-theme-current", "light");
+          }
+          if (currentTheme === "light") {
+            setDarkMode();
+            element.setAttribute("data-theme-current", "dark");
+          }
+          // if (selectedTheme === "dark") setDarkMode();
+          // if (selectedTheme === "light") setLightMode();
         });
       });
     }
