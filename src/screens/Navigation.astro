@@ -1,34 +1,91 @@
 ---
 import ButtonChevronDown from "@/components/icons/arrows/ButtonChevronDown.astro";
+import Pill1 from "@/components/icons/decoration/Pill1.astro";
+import Pill2 from "@/components/icons/decoration/Pill2.astro";
+import Shape1 from "@/components/icons/decoration/Shape1.astro";
+import Triangle1 from "@/components/icons/decoration/Triangle1.astro";
+import Zigzag from "@/components/icons/decoration/Zigzag.astro";
 import BodyBoundaries from "@/layout/BodyBoundaries.astro";
 import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
 ---
 
-<BodyBoundaries className="self-stretch w-full">
-  <ComponentBoundaries className="p-12 shape-2 ml-auto">
-    <!-- <div class="grid [grid-template-rows:_auto_1fr_auto]
-    h-[88%]">
-      <span class="text-ligth-label text-center font-medium text-lg"
-        >Bienvenido, soy</span
-      >
+<BodyBoundaries width="2xl" padX={1} className="self-stretch w-full">
+  <section class="grid grid-cols-[1fr_1fr] h-full gap-[2dvw]">
+    <ComponentBoundaries className="py-0 mr-auto w-full">
       <div
-        class="*:font-semibold mt-4 *:block *:text-center *:grad_ligth-gb *:text-gradient"
+        class="p-12 bg-slate-700 w-[90%] h-full self-end rounded-[2.2rem] relative"
       >
-        <h2 class="text-6xl">Diseñador</h2>
-        <h2 class="text-8xl">UI/UX</h2>
+        <div
+          class="absolute overflow-hidden top-0 left-[-1px] w-[101%] h-full rounded-[2.2rem] z-[1]"
+        >
+          <img
+            src="/images/hero2_hd.webp"
+            alt=""
+            srcset=""
+            class="object-cover h-full w-full"
+          />
+        </div>
+        <Pill1
+          className="absolute z-10 top-[2%] -right-[26%] w-[calc(.75rem_+_6dvw)] aspect-square"
+        />
+        <Pill2
+          className="absolute top-[39%] -right-[16%] w-[calc(2rem_+_6dvw)] z-0 aspect-square"
+        />
+        <Zigzag
+          className="absolute z-10 top-[16%] -right-[37%] w-[calc(3.5rem_+_6dvw)] aspect-square"
+        />
+        <Shape1
+          className="absolute z-10 -top-[19%] -right-[14%] w-[calc(3.5rem_+_6dvw)] aspect-square"
+        />
+        <Triangle1
+          className="absolute z-10 top-[19%] -right-[13%] w-[calc(1rem_+_6dvw)] aspect-square"
+        />
       </div>
-      <div class="text-ligth-label text-center">
-        <span>La interactividad es el mejor camino.</span>
-      </div>
-    </div> -->
-    <!-- <div
-      class="absolute rounded-[1.35rem] px-5 bottom-[1.4%] left-1/2 -translate-x-1/2 border border-ligth-p"
-    >
-      <button class="flex"
-        ><div class="flex items-center mr-[0.8rem] ml-[0.1rem] text-ligth-p">
-          <ButtonChevronDown /> Conoce más
-        </div></button
+    </ComponentBoundaries>
+    <ComponentBoundaries className="py-0 relative w-[max(70%,30rem)] ml-auto">
+      <div class="p-12 shape-2 shape-theme-navigation shape-after w-full">
+        <div class="grid [grid-template-rows:_auto_1fr]
+      h-[88%]">
+          <span class="text-ligth-label text-right font-medium text-lg"
+            >Navegación</span
+          >
+          <div
+            class="*:font-semibold mt-4 *:block child:w-fit *:text-gradient child:ml-auto *:grad_ligth-gb child:pb-1 child:-mt-1"
+          >
+            <a href="/about-me" class="*:gradient-setup"
+              ><h2 class="text-7xl">Sobre mi</h2></a
+            >
+            <a href="/projects" class="*:gradient-setup"
+              ><h2 class="text-7xl">Proyectos</h2></a
+            >
+            <a href="/contact" class="*:gradient-setup"
+              ><h2 class="text-7xl">Contacto</h2></a
+            >
+            <a
+              href="#"
+              aria-disabled="true"
+              class="relative cursor-not-allowed saturate-50 opacity-50"
+              ><h2 class="text-7xl">Blog</h2>
+            </a>
+          </div>
+        </div>
+
+        <!-- <div
+        class="absolute rounded-[1.35rem] px-5 bottom-[1.4%] left-1/2 -translate-x-1/2 border border-ligth-p"
       >
-    </div> -->
-  </ComponentBoundaries>
+        <button class="flex"
+          ><div class="flex items-center mr-[0.8rem] ml-[0.1rem] text-ligth-p">
+            <ButtonChevronDown /> Conoce más
+          </div></button
+        >
+      </div> -->
+      </div>
+      <div
+        class="text-ligth-label absolute bottom-0 left-0 -translate-x-1/4 text-end max-w-[15ch] w-full"
+      >
+        <span class="font-semibold block text-lg">Bienvenido.</span>
+        <span class="block mt-1">Entra en la pagina que deseas.</span>
+      </div>
+    </ComponentBoundaries>
+  </section>
 </BodyBoundaries>

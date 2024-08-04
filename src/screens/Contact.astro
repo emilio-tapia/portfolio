@@ -1,0 +1,183 @@
+---
+import ButtonChevronDown from "@/components/icons/arrows/ButtonChevronDown.astro";
+import ButtonChevronRight from "@/components/icons/arrows/ButtonChevronRight.astro";
+import Comtelec from "@/components/icons/job/Comtelec.astro";
+import Homs from "@/components/icons/job/Homs.astro";
+import Github from "@/components/icons/social/Github.astro";
+import LinkedIn from "@/components/icons/social/LinkedIn.astro";
+import BodyBoundaries from "@/layout/BodyBoundaries.astro";
+import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
+---
+
+<BodyBoundaries width="2xl" padX={1} className="self-stretch w-full">
+  <section class="grid h-full gap-[2dvw]">
+    <ComponentBoundaries
+      className="w-[100%] relative grid sm:grid-cols-2 items-start gap-16 p-8 mx-auto  shape-theme-navigation rounded-[2.2rem]  "
+    >
+      <div>
+        <div>
+          <div>
+            <h1 class="text-3xl font-bold text-ligth-black dark:text-dark-p">
+              Contacto
+            </h1>
+            <p class="text-sm mt-3 text-ligth-label2 dark:text-dark-p2">
+              Have some big idea or brand to develop and need help? Then reach
+              out we'd love to hear about your project and provide help.
+            </p>
+          </div>
+          <button
+            class="rounded-[1.35rem] px-5 border border-solid buttonbehavior mt-6"
+          >
+            <div class="flex items-center mr-[0.8rem] ml-[0.1rem]">
+              <ButtonChevronRight /> Descargar CV
+            </div>
+          </button>
+        </div>
+
+        <div>
+          <div class="mt-8">
+            <h2 class="text-lg font-semibold text-ligth-p dark:text-dark-p2">
+              Email
+            </h2>
+            <ul class="mt-3">
+              <li class="flex items-center">
+                <div
+                  class="h-10 w-10 rounded-full flex items-center justify-center shrink-0 text-ligth-p2 dark:text-dark-p2"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20px"
+                    height="20px"
+                    fill="currentColor"
+                    viewBox="0 0 479.058 479.058"
+                  >
+                    <path
+                      d="M434.146 59.882H44.912C20.146 59.882 0 80.028 0 104.794v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159L239.529 264.631 39.173 90.982a14.902 14.902 0 0 1 5.738-1.159zm0 299.411H44.912c-8.26 0-14.971-6.71-14.971-14.971V122.615l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z"
+                      data-original="#000000"></path>
+                  </svg>
+                </div>
+                <a
+                  target="blank"
+                  href="mailto:me@emilio-tapia.com"
+                  class="grad_dark-gb2 dark:grad_whitePink text-gradient dark:text-gradient text-sm ml-3"
+                >
+                  <small class="block">Correo electrónico</small>
+                  <strong>me@emilio-tapia.com</strong>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-8">
+            <h2 class="text-lg font-semibold text-ligth-p dark:text-dark-p2">
+              Redes Sociales
+            </h2>
+            <ul class="grid grid-flow-row mt-3 justify-start gap-4">
+              <li
+                class="rounded-full flex items-center justify-center shrink-0"
+              >
+                <a href="javascript:void(0)">
+                  <div
+                    class="grid [grid-template-columns:auto_auto] items-center"
+                  >
+                    <div class="h-10 w-10 grid place-content-center">
+                      <Github
+                        className="icon-sm text-ligth-p2 dark:text-dark-p2 fill-current"
+                      />
+                    </div>
+                    <div
+                      class="text-sm ml-3 grad_darkpurpleOpa dark:grad_whitePink text-gradient dark:text-gradient"
+                    >
+                      <small class="block">Github</small>
+                      <strong>@emiliota95</strong>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li
+                class="rounded-full flex items-center justify-center shrink-0"
+              >
+                <a href="javascript:void(0)">
+                  <div
+                    class="grid [grid-template-columns:auto_auto] items-center"
+                  >
+                    <div class="h-10 w-10 grid place-content-center">
+                      <LinkedIn
+                        className="icon-sm text-ligth-p2 dark:text-dark-p2 fill-current"
+                      />
+                    </div>
+                    <div
+                      class="text-sm ml-3 grad_darkpurpleOpa dark:grad_whitePink text-gradient dark:text-gradient"
+                    >
+                      <small class="block">LinkedIn</small>
+                      <strong>@emiliota95</strong>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <form class="ml-auo space-y-4">
+        <input
+          type="text"
+          placeholder="Name"
+          class="w-full rounded-md py-2.5 px-4 border text-sm outline-ligth-blue bg-white/75 border-[#c3c3c3]/90 dark:bg-white/10 dark:border-white/20"
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          class="w-full rounded-md py-2.5 px-4 border text-sm outline-ligth-blue bg-white/75 border-[#c3c3c3]/90 dark:bg-white/10 dark:border-white/20"
+        />
+        <input
+          type="text"
+          placeholder="Subject"
+          class="w-full rounded-md py-2.5 px-4 border text-sm outline-ligth-blue bg-white/75 border-[#c3c3c3]/90 dark:bg-white/10 dark:border-white/20"
+        />
+        <textarea
+          placeholder="Message"
+          rows="6"
+          class="w-full rounded-md px-4 border text-sm pt-2.5 outline-ligth-blue bg-white/75 border-[#c3c3c3]/90 dark:bg-white/10 dark:border-white/20"
+        ></textarea>
+
+        <button
+          type="button"
+          class="rounded-[0.75rem] px-5 border border-solid buttonbehavior mt-6 w-full"
+        >
+          <div
+            class="flex items-center mr-[0.8rem] ml-[0.1rem] font-semibold justify-center py-2"
+          >
+            Enviar
+          </div>
+        </button>
+      </form>
+    </ComponentBoundaries>
+  </section>
+</BodyBoundaries>
+
+<style is:inline>
+  .gridTemplate {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+  }
+  .cardOverflow {
+    width: 110%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cardLayout::before {
+    content: "";
+    top: 50%;
+    left: 0;
+    border-radius: 99%;
+    translate: -40% -50%;
+    position: absolute;
+    background: #aa05133b;
+    aspect-ratio: 1/1;
+    filter: blur(30px);
+    height: 55%;
+    z-index: 1;
+  }
+</style>

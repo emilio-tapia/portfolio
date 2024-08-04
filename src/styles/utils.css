@@ -27,6 +27,14 @@
     background: linear-gradient(260.85deg, #055872 6.94%, #104e96 100%);
   }
 
+
+  .grad_dark-gb3 {
+    background: linear-gradient(
+      260.85deg,
+      hsl(194 42% 16% / 1) 6.94%,
+      hsl(192 31% 19% / 1)
+    );
+  }
   /* GRADIENT ligth GREEN BLUE */
   .grad_ligth-gb {
     background: linear-gradient(
@@ -53,10 +61,158 @@
       rgba(214, 214, 214, 0.64) 100%
     );
   }
+  
+  .grad_whiteDarkT {
+    background: linear-gradient(
+      270deg,
+      #b0afb1 0%,
+      #b0afb1 33%,
+      #b0afb1 66%,
+      #b0afb1 100%
+    );
+  }
+
+  /* GRADIENT OPACITY */
+  .grad_darkblueOpa {
+    background: linear-gradient(
+      270deg,
+      hsl(196deg 47% 27% / 50%),
+      hsl(197deg 33% 25% / 50%) 33%,
+      hsl(202deg 43% 24% / 50%) 66%,
+      hsl(209deg 37% 27% / 50%)
+    );
+  }
+  .grad_darkpurpleOpa {
+    background: linear-gradient(
+      270deg,
+      rgb(86 84 101 / 50%),
+      rgb(75 73 85 / 50%) 33%,
+      rgb(70 68 88 / 50%) 66%,
+      rgb(67 70 94 / 50%)
+    );
+  }
+
+  .grad_darkpurpleOpa2 {
+    background: linear-gradient(
+      270deg,
+      hsl(247deg 9% 26% / 40%),
+      hsl(250deg 8% 23% / 40%) 33%,
+      hsl(246deg 13% 22% / 40%) 66%,
+      hsl(233deg 17% 22% / 40%)
+    );
+  }
+  .grad_darkpurpleOpa3 {
+    background: linear-gradient(
+      270deg,
+      hsl(250deg 9% 36% / 40%),
+      hsl(253deg 8% 33% / 40%) 33%,
+      hsl(244deg 13% 32% / 40%) 66%,
+      hsl(234deg 17% 33% / 40%)
+    );
+  }
+  .grad_darkpurpleOpa3-wcolor {
+    background: linear-gradient(
+        270deg,
+        rgba(86, 84, 100, 0.4),
+        rgba(80, 77, 91, 0.4) 33%,
+        rgba(72, 71, 92, 0.4) 66%,
+        rgba(70, 73, 98, 0.4)
+      ),
+      hsl(250 15% 15% / 1);
+  }
+  .grad_darkpurpleOpa4 {
+    background: linear-gradient(
+      270deg,
+      hsl(250deg 9% 46% / 40%),
+      hsl(253deg 8% 34% / 40%) 33%,
+      hsl(244deg 13% 35% / 40%) 66%,
+      hsl(234deg 17% 35% / 40%)
+    );
+  }
+
+  .grad_whiteOpa {
+    background: linear-gradient(
+      270deg,
+      hsl(247deg 9% 94% / 50%),
+      hsl(250deg 8% 96% / 44%) 33%,
+      hsl(246deg 13% 94% / 56%) 66%,
+      hsl(233deg 17% 96% / 60%)
+    );
+  }
+
+  .grad_whiteOpa2 {
+    background: linear-gradient(
+      270deg,
+      hsl(247deg 9% 89% / 50%),
+      hsl(250deg 8% 88% / 44%) 33%,
+      hsl(240deg 13% 91% / 56%) 66%,
+      hsl(240deg 20% 93% / 60%)
+    );
+  }
+
+  .grad_whiteOpa2-wcolor {
+    background: linear-gradient(
+        270deg,
+        hsla(247, 9%, 89%, 0.5),
+        hsla(250, 8%, 88%, 0.44) 33%,
+        rgba(229, 229, 235, 0.56) 66%,
+        rgba(234, 234, 241, 0.6)
+      ),
+      hsl(280 50% 95% / 1);
+  }
+
+  .grad_whitePink {
+    background: linear-gradient(
+      270deg,
+      hsl(256 38% 82% / 1),
+      hsl(247 23% 82% / 1) 33%,
+      hsl(252 31% 83% / 1) 66%,
+      hsl(269 33% 88% / 1)
+    );
+  }
 
   /* ******************************** TEXT ************************************* */
   .text-gradient {
     @apply bg-clip-text text-transparent;
     text-fill-color: transparent;
+  }
+
+  .wrap {
+    width: 100%;
+  }
+  .gradient-setup {
+    background-size: 200% 200%;
+    animation: rainbow 2s ease-in-out infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: rgba(0, 0, 0, 0.4);
+    display: block;
+    transition: color 0.2s ease-in-out;
+  }
+  .gradient-setup:hover {
+    color: rgba(0, 0, 0, 0);
+  }
+  @keyframes rainbow {
+    0% {
+      background-position: left;
+    }
+    50% {
+      background-position: right;
+    }
+    100% {
+      background-position: left;
+    }
+  }
+
+  /* ******************************** LINK ************************************* */
+
+  .linkbehavior {
+    @apply text-ligth-p/70 hover:text-ligth-p/90 active:text-ligth-p  dark:text-dark-title/60 hover:dark:text-dark-title/90 active:dark:text-dark-title fill-current;
+  }
+
+  /* ******************************** BUTTON ************************************* */
+
+  .buttonbehavior {
+    @apply text-ligth-p hover:text-pale-100 active:text-pale-100 border-ligth-p bg-transparent hover:bg-ligth-p active:bg-ligth-p dark:text-dark-p/70 dark:border-dark-p/70 hover:dark:text-dark-title/80 active:dark:text-dark-title/80 fill-current;
   }
 }

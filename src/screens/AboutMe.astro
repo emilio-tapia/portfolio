@@ -1,0 +1,134 @@
+---
+import ButtonChevronDown from "@/components/icons/arrows/ButtonChevronDown.astro";
+import ButtonChevronRight from "@/components/icons/arrows/ButtonChevronRight.astro";
+import Pill1 from "@/components/icons/decoration/Pill1.astro";
+import Pill2 from "@/components/icons/decoration/Pill2.astro";
+import Shape1 from "@/components/icons/decoration/Shape1.astro";
+import Triangle1 from "@/components/icons/decoration/Triangle1.astro";
+import Zigzag from "@/components/icons/decoration/Zigzag.astro";
+import Birthday from "@/components/icons/info/birthday.astro";
+import Email from "@/components/icons/info/email.astro";
+import LinkedIn from "@/components/icons/info/linkedIn.astro";
+import Location from "@/components/icons/info/location.astro";
+import BodyBoundaries from "@/layout/BodyBoundaries.astro";
+import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
+---
+
+<BodyBoundaries width="2xl" padX={1} className="self-stretch w-full">
+  <section class="grid grid-cols-[auto] h-full gap-[2dvw]">
+    <ComponentBoundaries
+      className="p-12 mr-auto w-[100%] h-full self-end  relative"
+    >
+      <div
+        class="absolute top-0 left-[-1px] shape-3 shape-theme-about w-[80%] h-full rounded-[2.2rem] z-[1] backdrop-blur-md px-[2rem] py-[1.75rem] flex justify-between flex-col"
+      >
+        <div
+          class="absolute overflow-hidden top-[3dvh] right-4 w-[22rem] h-full max-h-[50dvh] rounded-[2.2rem] z-[1] border"
+        >
+          <img
+            src="/images/aboutme_hd.webp"
+            alt=""
+            srcset=""
+            class="h-full object-cover w-full object-top"
+          />
+          <img
+            src="/images/aboutme_hd.webp"
+            alt=""
+            srcset=""
+            class="absolute h-full object-cover w-full object-top blur-lg"
+          />
+        </div>
+        <div class="space-y-2">
+          <span
+            class="text-center font-medium text-3xl text-ligth-p dark:text-dark-p"
+            >Sobre mi</span
+          >
+          <p class="w-[min(48ch,35dvw)] text-ligth-label2 dark:text-dark-p2">
+            Permite contarte un poco de mi. Soy un profesional dedicado
+            desarrollo web/movil y diseño de interface centrado en el usuario.
+            Tengo varias más habilidades como la automatización de procesos,
+            manejo de bases de datos, producción multimedia.
+          </p>
+        </div>
+        <div class="flex gap-8 flex-col">
+          <div>
+            <span class="font-medium text-xl text-ligth-p2 dark:text-dark-label"
+              >Estudios</span
+            >
+            <p class="w-[min(48ch,35dvw)] text-ligth-label2 dark:text-dark-p2">
+              USFQ - Licenciado en producción musical.
+            </p>
+            <p class="w-[min(48ch,35dvw)] text-ligth-label2 dark:text-dark-p2">
+              UDLA - Maestría en Experiencia de usuario.
+            </p>
+          </div>
+          <div>
+            <span class="font-medium text-xl text-ligth-p2 dark:text-dark-label"
+              >Experiencia</span
+            >
+            <p class="w-[min(48ch,35dvw)] text-ligth-label2 dark:text-dark-p2">
+              Comtelec - Jefe de marketing/diseño.
+            </p>
+            <p class="w-[min(48ch,35dvw)] text-ligth-label2 dark:text-dark-p2">
+              UDLA - Maestría en Experiencia de usuario.
+            </p>
+          </div>
+          <a href="/projects">
+            <button
+              class="rounded-[1.35rem] px-5 border border-solid buttonbehavior"
+            >
+              <div class="flex items-center mr-[0.8rem] ml-[0.1rem]">
+                <ButtonChevronRight /> Proyectos
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- <img src="/images/hero2_hd.png" alt="" srcset="" /> -->
+      </div>
+      <Pill1
+        className="absolute z-10 top-[12%] right-[10%] w-[calc(.75rem_+_6dvw)] aspect-square"
+      />
+      <Pill2
+        className="absolute top-[44%] right-[15%] w-[calc(2rem_+_6dvw)] z-0 aspect-square"
+      />
+      <Zigzag
+        className="absolute z-10 top-[25%] right-[7%] w-[calc(3.5rem_+_6dvw)] aspect-square"
+      />
+      <Shape1
+        className="absolute z-10 -top-[5%] right-[15%] w-[calc(3.5rem_+_6dvw)] aspect-square"
+      />
+      <Triangle1
+        className="absolute z-10 top-[27%] right-[15%] w-[calc(1rem_+_6dvw)] aspect-square"
+      />
+      <div
+        class="absolute bottom-[1px] rounded-[2.2rem] right-0 w-1/2 h-[8.35rem] shape-theme-about z-[1] backdrop-blur-md px-[1.5rem] py-[1.25rem]"
+      >
+        <span
+          class="text-ligth-p2 text-center font-medium text-xl dark:text-dark-label"
+          >Información</span
+        >
+        <div
+          class="grid grid-rows-2 mt-3 text-ligth-p2 gap-1 dark:text-dark-p2"
+        >
+          <div class="grid grid-cols-2 *:flex *:gap-2">
+            <div>
+              <Location />
+              <span>Quito, Ecuador</span>
+            </div>
+            <div>
+              <Email />
+              <span>me@emilio-tapia.com</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 *:flex *:gap-2">
+            <div>
+              <Birthday />
+              <span>28 años</span>
+            </div>
+            <div><LinkedIn /> <span>@emiliota95</span></div>
+          </div>
+        </div>
+      </div>
+    </ComponentBoundaries>
+  </section>
+</BodyBoundaries>

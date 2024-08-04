@@ -1,0 +1,45 @@
+---
+import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
+import ButtonChevronRight from "../icons/arrows/ButtonChevronRight.astro";
+
+type Props = {
+  layout: "rounded" | "nobg";
+};
+
+const { layout } = Astro.props;
+---
+
+{
+  layout === "rounded" && (
+    <ComponentBoundaries className="p-12 mr-auto w-[100%] h-full self-end  relative">
+      <div class="overflow-hidden top-0 left-[-1px] shape-theme w-[80%] h-full rounded-[2.2rem] z-[1] backdrop-blur-md px-[2rem] py-[1.75rem] flex justify-between flex-col">
+        <div class="space-y-2">
+          <span class="text-ligth-label text-center font-medium text-3xl">
+            Sobre mi
+          </span>
+          <p class="max-w-[48ch]">
+            Permite contarte un poco de mi. Soy un profesional dedicado
+            desarrollo web/movil y diseño de interface centrado en el usuario.
+            Tengo varias más habilidades como la automatización de procesos,
+            manejo de bases de datos, producción multimedia.
+          </p>
+        </div>
+        <div class="flex gap-8 flex-col">
+          <div>
+            <span class="text-ligth-label text-center font-medium text-xl">
+              La interactividad
+            </span>
+            <p>Experiencia en desarrollo.</p>
+          </div>
+          <a href="/projects">
+            <button class="rounded-[1.35rem] px-5 border border-solid buttonbehavior">
+              <div class="flex items-center mr-[0.8rem] ml-[0.1rem]">
+                <ButtonChevronRight /> Proyectos
+              </div>
+            </button>
+          </a>
+        </div>
+      </div>
+    </ComponentBoundaries>
+  )
+}

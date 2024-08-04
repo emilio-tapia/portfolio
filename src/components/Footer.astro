@@ -14,22 +14,33 @@ const t = useTranslations(currentLang);
   <BodyBoundaries width="2xl" padX={1} className="my-3 rounded-md">
     <div class="relative grid">
       <div
-        class={clsxm([
-          "flex",
-          "supports-[display:grid]:grid",
-          "flex-nowrap flex-row items-center",
-        ])}
+        class={clsxm(["flex", "flex-nowrap flex-row items-center"])}
         id="menu_grid"
       >
         <ComponentBoundaries
-          className="max-lg:[grid-area:logo] flex flex-row ml-0 justify-between items-center"
+          className="max-lg:[grid-area:logo] flex flex-row ml-0 justify-between items-center w-full"
         >
-          <a href="mailto:" class="text-md text-ligth-p font-normal">
-            contacto: me@emiliotapia.com
-          </a>
-          <div class="flex flex-row gap-4">
-            <Github classlist="icon-md" />
-            <LinkedIn classlist="icon-md" />
+          <div class="flex flex-row gap-4 *:linkbehavior">
+            <!-- <a
+              href="mailto:me@emilio-tapia.com"
+              class="text-lg font-normal linkbehavior"
+            >
+              Resources</a
+            > -->
+            <a
+              href="/resources/cv-emilio-tapia-en.pdf"
+              class="!text-xs font-normal linkbehavior"
+            >
+              @2024</a
+            >
+          </div>
+          <div class="flex flex-row gap-4 *:linkbehavior">
+            <a href="https://github.com/emilio-tapia"
+              ><Github className="icon-md" /></a
+            >
+            <a href="https://www.linkedin.com/in/emilio-tapia-a24150172/"
+              ><LinkedIn className="icon-md" /></a
+            >
           </div>
           <!-- <span class="text-xs text-black dark:text-white"
             >UI/UX Designer | Front-end</span

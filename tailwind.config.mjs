@@ -12,8 +12,18 @@ export default {
       },
       colors: {
         ligth: {
+          black: "#333",
           p: "#404553",
+          p2: "#596073",
           label: "#93959A",
+          label2: "#77797e",
+          blue: "#185490",
+        },
+        dark: {
+          title: "#b0afb1",
+          p: "#b0afb1",
+          p2: "#919092",
+          label: "#a3a2a4",
         },
         pale: {
           100: "#F5F6F7",

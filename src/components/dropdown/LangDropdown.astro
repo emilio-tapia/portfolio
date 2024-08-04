@@ -10,13 +10,13 @@ const t = useTranslations(currentLang);
 ---
 
 <lang-dropdown
-  class="relative text-left dropdown h-full flex items-center"
+  class="relative text-left dropdown h-full flex items-center font-euclid"
   aria-label="Language Dropdown"
 >
   <!-- BUTTON -->
   <div class="block h-full w-full">
     <button
-      class="flex items-center grad_dark-gb pr-[0.9rem] pl-[1.2rem] py-[0.4rem] rounded-[0.65rem] font-euclid"
+      class="flex items-center grad_dark-gb dark:grad_darkpurpleOpa pr-[0.9rem] pl-[1.2rem] py-[0.4rem] rounded-[0.65rem]"
       type="button"
       data-dropdown="button"
       aria-haspopup="true"
@@ -40,20 +40,24 @@ const t = useTranslations(currentLang);
   </div>
   <!-- DROPDOWN -->
   <div
+    data-position
     class={clsxm([
       " absolute right-0 bottom-0",
       "transition-all duration-300",
       "scale-95 w-full",
-      "opacity-0 invisible dropdown-menu hidden",
+      "dropdown-menu",
+      "opacity-0 invisible",
     ])}
   >
     <div
+      data-space
       class={clsxm([
+        "mt-2",
         "absolute top-0 right-0",
         "w-full ",
-        "rounded-xs border border-black shadow-sm outline-none",
+        "rounded-md border border-slate-300 shadow-sm outline-none",
+        "bg-white/80 divide-y divide-inherit backdrop-blur-md",
       ])}
-      class="bg-white dark:bg-blue_dark-300 lg:dark:bg-blue_dark-300 divide-y divide-inherit"
       data-dropdown="popup"
       aria-expanded="false"
       id="lang-controls"
@@ -93,9 +97,9 @@ const t = useTranslations(currentLang);
 
 <style>
   .dropdown:focus-within .dropdown-menu {
-    opacity: 1;
-    transform: translate(0) scale(1);
-    visibility: visible;
+    opacity: 1 !important;
+    transform: translate(0) scale(1) !important;
+    visibility: visible !important;
   }
 </style>
 

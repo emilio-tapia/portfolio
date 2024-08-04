@@ -4,7 +4,9 @@ import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
 ---
 
 <section class="self-stretch">
-  <ComponentBoundaries className="p-12 shape-1 mx-auto">
+  <ComponentBoundaries
+    className="p-12 shape-1 shape-theme mx-auto min-w-[37rem]"
+  >
     <div class="grid [grid-template-rows:_auto_1fr_auto]
     h-[88%]">
       <span class="text-ligth-label text-center font-medium text-lg"
@@ -18,16 +20,17 @@ import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
       </div>
       <div class="text-ligth-label text-center">
         <span>La interactividad es el mejor camino.</span>
+        <br />
       </div>
     </div>
   </ComponentBoundaries>
-  <div
-    class="absolute rounded-[1.35rem] px-5 bottom-[1.4%] left-1/2 -translate-x-1/2 border border-ligth-p"
-  >
-    <button class="flex"
-      ><div class="flex items-center mr-[0.8rem] ml-[0.1rem] text-ligth-p">
-        <ButtonChevronDown /> Conoce más
-      </div></button
+  <a href="/nav">
+    <button
+      class="absolute rounded-[1.35rem] px-5 bottom-[1.4%] left-1/2 -translate-x-1/2 border border-solid buttonbehavior"
     >
-  </div>
+      <div class="flex items-center mr-[0.8rem] ml-[0.1rem]">
+        <ButtonChevronDown /> Conoce más
+      </div>
+    </button>
+  </a>
 </section>
