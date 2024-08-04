@@ -27,6 +27,7 @@
     background: linear-gradient(260.85deg, #055872 6.94%, #104e96 100%);
   }
 
+
   .grad_dark-gb3 {
     background: linear-gradient(
       260.85deg,
@@ -34,7 +35,6 @@
       hsl(192 31% 19% / 1)
     );
   }
-
   /* GRADIENT ligth GREEN BLUE */
   .grad_ligth-gb {
     background: linear-gradient(
@@ -61,6 +61,7 @@
       rgba(214, 214, 214, 0.64) 100%
     );
   }
+  
   .grad_whiteDarkT {
     background: linear-gradient(
       270deg,

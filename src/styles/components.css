@@ -35,7 +35,7 @@
     z-index: -1;
     filter: blur(85px);
   }
-
+  
   .shape-1 {
     @apply h-full;
     clip-path: polygon(
@@ -218,7 +218,6 @@
       99.916% 8.043%
     );
 
-    /* background: hsl(0deg 0% 100% / 60%); */
     max-width: 45dvw;
     backdrop-filter: blur(3px) saturate(0.75);
   }
