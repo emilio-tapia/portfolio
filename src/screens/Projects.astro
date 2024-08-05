@@ -3,8 +3,11 @@ import ButtonChevronDown from "@/components/icons/arrows/ButtonChevronDown.astro
 import ButtonChevronRight from "@/components/icons/arrows/ButtonChevronRight.astro";
 import Comtelec from "@/components/icons/job/Comtelec.astro";
 import Homs from "@/components/icons/job/Homs.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import BodyBoundaries from "@/layout/BodyBoundaries.astro";
 import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
 ---
 
 <BodyBoundaries width="2xl" padX={1} className="self-stretch w-full">
@@ -18,23 +21,21 @@ import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
         <div class="space-y-2">
           <span
             class="text-ligth-p dark:text-dark-p text-center font-medium text-3xl"
-            >Proyectos</span
+            >{t("nav").project}</span
           >
           <p class="max-w-[48ch] text-ligth-label2 dark:text-dark-label">
-            Permite contarte un poco de mi. Soy un profesional dedicado
-            desarrollo web/movil y diseño de interface centrado en el usuario.
-            Tengo varias más habilidades como la automatización de procesos,
-            manejo de bases de datos, producción multimedia.
+            {t("project").description}
           </p>
         </div>
         <div class="flex gap-8 flex-col">
           <div>
             <span
               class="text-ligth-p2 dark:text-dark-label text-center font-medium text-xl"
-              >La interactividad</span
             >
-            <p class="text-ligth-label2 dark:text-dark-p2">
-              Experiencia en desarrollo.
+              {t("project").catch1}</span
+            >
+            <p class="text-ligth-label2 dark:text-dark-p2 mt-2">
+              {t("project").catch2}
             </p>
           </div>
           <a href="/contact" class="absolute lg:relative top-0 right-0">
@@ -42,7 +43,8 @@ import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
               class="rounded-[1.35rem] px-5 border border-solid buttonbehavior"
             >
               <div class="flex items-center mr-[0.8rem] ml-[0.1rem]">
-                <ButtonChevronRight /> Contacto
+                <ButtonChevronRight />
+                {t("nav").contact}
               </div>
             </button>
           </a>
