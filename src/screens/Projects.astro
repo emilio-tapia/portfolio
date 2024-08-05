@@ -8,17 +8,19 @@ import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
 ---
 
 <BodyBoundaries width="2xl" padX={1} className="self-stretch w-full">
-  <section class="gridTemplate h-full gap-[2dvw]">
+  <section
+    class="grid max-lg:[grid-template-rows:auto_auto] lg:[grid-template-columns:1fr_2.5fr;] h-full gap-[2dvw]"
+  >
     <ComponentBoundaries className="p-0 w-[100%] h-full self-end relative ">
       <div
-        class="h-full z-[1] backdrop-blur-md px-[1rem] flex justify-between flex-col"
+        class="h-full z-[1] backdrop-blur-md px-[1rem] flex justify-between flex-col gap-8 lg:gap-0"
       >
         <div class="space-y-2">
           <span
             class="text-ligth-p dark:text-dark-p text-center font-medium text-3xl"
             >Proyectos</span
           >
-          <p class="max-w-[48ch] text-ligth-label2 dark:text-dark-p2">
+          <p class="max-w-[48ch] text-ligth-label2 dark:text-dark-label">
             Permite contarte un poco de mi. Soy un profesional dedicado
             desarrollo web/movil y diseño de interface centrado en el usuario.
             Tengo varias más habilidades como la automatización de procesos,
@@ -35,7 +37,7 @@ import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
               Experiencia en desarrollo.
             </p>
           </div>
-          <a href="/contact">
+          <a href="/contact" class="absolute lg:relative top-0 right-0">
             <button
               class="rounded-[1.35rem] px-5 border border-solid buttonbehavior"
             >
@@ -51,175 +53,192 @@ import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
       className="cardLayout before:[background:linear-gradient(88deg,#12296733_50%,transparent 60%)] dark:before:[background:linear-gradient(88deg,black,transparent)] p-0 mr-auto w-[100%] h-full self-end relative "
     >
       <div
-        class="cardOverflow absolute shape-theme-navigation h-full rounded-[2.2rem] z-[1] backdrop-blur-md px-[2rem] py-[1.75rem] grid gap-4 grid-rows-[1fr_auto]"
+        class="w-full lg:w-[109%] cardOverflow absolute shape-theme-navigation h-full rounded-[2.2rem] z-[1] backdrop-blur-md px-[2rem] py-[1.75rem] grid gap-4 grid-rows-[1fr_auto]"
       >
-        <div class="grid grid-cols-3 gap-4 *:aspect-square *:rounded-[2.2rem]">
-          <div class="shape-theme overflow-hidden">
+        <div
+          class="grid md:grid-cols-3 gap-4 md:*:aspect-square *:rounded-[2.2rem]"
+        >
+          <div class="shape-theme overflow-hidden shadow-lg shadow-ligth-p/10">
             <div class="mx-auto h-full">
               <div
-                class="relative flex flex-col min-w-0 break-words bg-white w-full rounded-lg bg-[#f3f3f2] h-full"
+                class="relative flex flex-col min-w-0 break-words w-full rounded-lg grad_whiteOpa2 dark:grad_darkpurpleOpa3 h-full"
               >
-                <div
-                  class="max-h-40 w-full mx-auto rounded-t-xl overflow-hidden [mask-image:linear-gradient(2deg,transparent_0%,#000_0%)]"
-                >
-                  <img
-                    alt="..."
-                    src="bpm.jpg"
-                    class="w-full h-full align-middle object-cover scale-[2.2] [object-position:0%_-10%] -rotate-12 relative -left-[10%]"
-                  />
-                </div>
-                <blockquote class="relative py-6 px-8 mb-4">
-                  <svg
-                    preserveAspectRatio="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 583 95"
-                    class="absolute -scale-x-[1] left-0 w-[110%] block h-[10rem] top-0 -translate-y-full"
-                  >
-                    <polygon
-                      points="-30,95 583,95 583,65"
-                      class="text-[#f3f3f2] fill-current"></polygon>
-                  </svg>
+                <blockquote class="relative py-8 px-8 mb-4">
                   <Comtelec
-                    className="h-6 -ml-[0.3rem] -mt-3 mb-3 saturate-50"
+                    className="h-7 -ml-[0.3rem] -mt-3 mb-2 saturate-50"
                   />
-                  <h4 class="text-xl font-bold text-ligth-p">
+                  <h4
+                    class="text-xl [font-size:clamp(0.8rem,0.0179rem_+_1.9251vw,1.25rem)] font-bold text-ligth-p mb-2"
+                  >
                     Automatización BPM
                   </h4>
 
                   <p class="text-sm font-light mt-1 text-ligth-p truncate">
-                    Diseño BPM - Desarrollo Backend
+                    Diseño BPM
+                  </p>
+                  <p class="text-sm font-light mt-1 text-ligth-p truncate">
+                    Desarrollo Backend
                   </p>
                 </blockquote>
-              </div>
-            </div>
-          </div>
-          <div class="shape-theme overflow-hidden">
-            <div class="mx-auto h-full">
-              <div
-                class="relative flex flex-col min-w-0 break-words bg-white w-full rounded-lg bg-[#f3f3f2] h-full"
-              >
                 <div
-                  class="max-h-40 w-full mx-auto rounded-t-xl overflow-hidden [mask-image:linear-gradient(2deg,transparent_0%,#000_0%)]"
+                  class="absolute max-h-full -z-[1] w-full mx-auto rounded-t-xl overflow-hidden maskImage2"
                 >
                   <img
                     alt="..."
-                    src="web.png"
-                    class="w-full h-full align-middle object-cover relative scale-[3] -left-[31%] [object-position:0_30%] -rotate-3"
+                    src="bpm.webp"
+                    class="w-full h-full object-cover scale-[2.2] -rotate-12 relative -left-[10%] translate-y-1/4"
                   />
                 </div>
-                <blockquote class="relative py-6 px-8 mb-4">
-                  <svg
-                    preserveAspectRatio="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 583 95"
-                    class="absolute -scale-x-[1] left-0 w-[110%] block h-[10rem] transla top-0 -translate-y-full"
-                  >
-                    <polygon
-                      points="-30,95 583,95 583,65"
-                      class="text-[#f3f3f2] fill-current"></polygon>
-                  </svg>
-                  <Comtelec
-                    className="h-6 -ml-[0.3rem] -mt-3 mb-3 saturate-50"
-                  />
-                  <h4 class="text-xl font-bold text-ligth-p">Página web</h4>
-
-                  <p class="text-sm font-light mt-1 text-ligth-p truncate">
-                    Diseño UI/UX - Desarrollo Front-end
-                  </p>
-                </blockquote>
               </div>
             </div>
           </div>
-          <div class="shape-theme overflow-hidden">
+          <div class="shape-theme overflow-hidden shadow-lg shadow-ligth-p/10">
             <div class="mx-auto h-full">
               <div
-                class="relative flex flex-col min-w-0 break-words bg-white w-full rounded-lg bg-[#f3f3f2] bg-pink-500 h-full"
+                class="relative flex flex-col min-w-0 break-words w-full rounded-lg grad_whiteOpa2 dark:grad_darkpurpleOpa3 h-full"
               >
+                <blockquote
+                  class="relative py-8 px-8 h-full z-10 flex flex-col justify-between"
+                >
+                  <div>
+                    <Comtelec
+                      className="h-7 -ml-[0.3rem] -mt-3 mb-3 saturate-50"
+                    />
+                    <h4
+                      class="text-xl [font-size:clamp(0.8rem,0.0179rem_+_1.9251vw,1.25rem)] font-bold text-ligth-p mb-2"
+                    >
+                      Página web
+                    </h4>
+
+                    <p class="text-sm font-light mt-1 text-ligth-p truncate">
+                      Diseño UI/UX
+                    </p>
+                    <p class="text-sm font-light mt-1 text-ligth-p truncate">
+                      Desarrollo Front-end
+                    </p>
+                  </div>
+                  <a href="https://comtelec.com" class="relative top-0 right-0">
+                    <button
+                      class="rounded-full border border-solid buttonbehavior"
+                    >
+                      <div class="flex items-center mr-[0.1rem] ml-[0.1rem]">
+                        <ButtonChevronRight />
+                      </div>
+                    </button>
+                  </a>
+                </blockquote>
                 <div
-                  class="max-h-40 w-full mx-auto rounded-t-xl overflow-hidden [mask-image:linear-gradient(2deg,transparent_0%,#000_0%)]"
+                  class="absolute max-h-full h-full -z-[1] w-full mx-auto rounded-t-xl overflow-hidden maskImage2"
                 >
                   <img
                     alt="..."
-                    src="taskmixr.png"
-                    class="w-full h-full align-middle object-cover relative scale-[2.5] left-[72%] top-[36%] -rotate-3"
+                    src="web.webp"
+                    class="w-full h-full object-cover scale-[2] [translate:-28%_15%]"
                   />
                 </div>
-                <blockquote class="relative py-6 px-8 mb-4">
-                  <svg
-                    preserveAspectRatio="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 583 95"
-                    class="absolute -scale-x-[1] left-0 w-[110%] block h-1[10rem] transla top-0 -translate-y-full"
-                  >
-                    <polygon
-                      points="-30,95 583,95 583,65"
-                      class="text-[#f3f3f2] fill-current"></polygon>
-                  </svg>
-                  <label for="" class="text-ligth-p/60 text-sm"
-                    >Proyecto Personal</label
-                  >
-                  <h4 class="text-xl font-bold text-ligth-p mt-4">TaskMixr</h4>
+              </div>
+            </div>
+          </div>
+          <div class="shape-theme overflow-hidden shadow-lg shadow-ligth-p/10">
+            <div class="mx-auto h-full">
+              <div
+                class="relative flex flex-col min-w-0 break-words w-full rounded-lg grad_whiteOpa2 dark:grad_darkpurpleOpa3 h-full"
+              >
+                <blockquote
+                  class="relative py-8 px-8 h-full z-10 flex flex-col justify-between"
+                >
+                  <div>
+                    <label for="" class="text-ligth-p/60 text-sm h-7"
+                      >Proyecto Personal</label
+                    >
+                    <h4
+                      class="text-xl [font-size:clamp(0.8rem,0.0179rem_+_1.9251vw,1.25rem)] font-bold text-ligth-p mb-2"
+                    >
+                      TaskMixr
+                    </h4>
 
-                  <p class="text-sm font-light mt-1 text-ligth-p truncate">
-                    Diseño UI/UX - Desarrollo Fullstack
-                  </p>
+                    <p class="text-sm font-light mt-1 text-ligth-p truncate">
+                      Diseño UI/UX
+                    </p>
+                    <p class="text-sm font-light mt-1 text-ligth-p truncate">
+                      Desarrollo Full-stack
+                    </p>
+                  </div>
+                  <a href="https://taskmixr.com" class="relative top-0 right-0">
+                    <button
+                      class="rounded-full border border-solid buttonbehavior"
+                    >
+                      <div class="flex items-center mr-[0.1rem] ml-[0.1rem]">
+                        <ButtonChevronRight />
+                      </div>
+                    </button>
+                  </a>
                 </blockquote>
+                <div
+                  class="absolute max-h-full h-full -z-[1] w-full mx-auto rounded-t-xl overflow-hidden maskImage2"
+                >
+                  <img
+                    alt="..."
+                    src="taskmixr.webp"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="grid grid-cols-2 gap-4 *:rounded-[2.2rem] h-[15rem]">
-          <div class="shape-theme p-8 overflow-hidden">
+        <div class="grid md:grid-cols-2 gap-4 *:rounded-[2.2rem] md:h-[15rem]">
+          <div
+            class="shape-theme p-8 overflow-hidden shadow-lg shadow-ligth-p/10"
+          >
             <div class="grid sm:grid-cols-2">
               <div class="flex flex-col justify-between relative z-10">
                 <div class="relative w-16 flex">
                   <Homs />
                 </div>
-                <div class="space-y-2">
+                <div class="mb-4 mt-4">
                   <h2
-                    class="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white"
+                    class="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white mb-2"
                   >
                     The Playroom
                   </h2>
-                  <p class="dark:text-gray-300 text-gray-700">Administración</p>
+                  <p class="dark:text-gray-300 text-gray-700/80">
+                    Administración
+                  </p>
+                  <p class="dark:text-gray-300 text-gray-700/80">Producción</p>
                 </div>
               </div>
               <div
-                fulloverflow-hidden-lg
-                relative
-                -right-[45%]
-                scale-[2.5]
-                [mask-image:linear-gradient(91deg,transparent_0%,black70%)]"
+                class="overflow-hidden relative -right-[45%] scale-[2.5] maskImage1"
               >
-                <img src="playroom.jpg" alt="" />
+                <img src="playroom.webp" alt="" />
               </div>
             </div>
           </div>
-          <div class="shape-theme p-8 overflow-hidden">
+          <div
+            class="shape-theme p-8 overflow-hidden shadow-lg shadow-ligth-p/10"
+          >
             <div class="grid sm:grid-cols-2">
               <div class="flex flex-col justify-between relative z-10">
                 <div class="relative w-28 flex">
                   <Comtelec className="saturate-50" />
                 </div>
-                <div class="space-y-2">
+                <div class="mb-4 mt-4">
                   <h2
-                    class="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white"
+                    class="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white mb-2"
                   >
                     Design System
                   </h2>
-                  <p class="dark:text-gray-300 text-gray-700">
-                    Diseño + Documentación
+                  <p class="dark:text-gray-300 text-gray-700/80">Diseño UI</p>
+                  <p class="dark:text-gray-300 text-gray-700/80">
+                    Documentación
                   </p>
                 </div>
               </div>
               <div
-                fulloverflow-hidden-lg
-                relative
-                -right-[45%]
-                scale-[2.5]
-                [mask-image:linear-gradient(91deg,transparent_0%,black70%)]"
+                class="overflow-hidden relative -right-[45%] scale-[2.5] maskImage1"
               >
-                <img src="playroom.jpg" alt="" />
+                <img src="designsystem.webp" alt="" />
               </div>
             </div>
           </div>
@@ -230,12 +249,19 @@ import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
 </BodyBoundaries>
 
 <style is:inline>
-  .gridTemplate {
+  /* .gridTemplateCols {
     display: grid;
-    grid-template-columns: 1fr 2.5fr;
-  }
+    
+    grid-template-rows: unset;
+  } */
+
+  /* .gridTemplateRows {
+    display: grid;
+    grid-template-columns: unset;
+    grid-template-rows: auto auto;
+  } */
   .cardOverflow {
-    width: 110%;
+    /* width: 110%; */
     position: relative;
     z-index: 1;
   }
@@ -252,5 +278,16 @@ import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
     height: 96%;
     width: 1%;
     z-index: 1;
+  }
+
+  .maskImage1 {
+    mask-image: linear-gradient(91deg, transparent 5%, black 70%);
+  }
+  .maskImage2 {
+    mask-image: radial-gradient(
+      ellipse 120% 90% at 88% 108%,
+      black -50%,
+      transparent 90%
+    );
   }
 </style>
