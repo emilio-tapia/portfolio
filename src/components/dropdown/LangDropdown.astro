@@ -16,7 +16,7 @@ const t = useTranslations(currentLang);
   <!-- BUTTON -->
   <div class="block h-full w-full">
     <button
-      class="flex items-center grad_dark-gb dark:grad_darkpurpleOpa pr-[0.9rem] pl-[1.2rem] py-[0.4rem] rounded-[0.65rem]"
+      class="flex items-center grad_dark-gb dark:grad_darkpurpleOpa pr-[0.9rem] pl-[0.9rem] sm:pl-[1.2rem] py-[0.4rem] rounded-[0.65rem]"
       type="button"
       data-dropdown="button"
       aria-haspopup="true"
@@ -32,9 +32,14 @@ const t = useTranslations(currentLang);
             class="w-5 [stroke-width:1.1px] stroke-white"
           /></span
         >
-        <span class="text-white">{languages[currentLang][currentLang]}</span>
+        <span class="text-white hidden sm:inline"
+          >{languages[currentLang][currentLang]}</span
+        >
 
-        <ButtonChevronDown stroke="currentColor" className="w-6 h-6" />
+        <ButtonChevronDown
+          stroke="currentColor"
+          className="w-6 h-6 hidden sm:inline"
+        />
       </div>
     </button>
   </div>
@@ -55,8 +60,8 @@ const t = useTranslations(currentLang);
         "mt-2",
         "absolute top-0 right-0",
         "w-full ",
-        "rounded-md border border-slate-300 shadow-sm outline-none",
-        "bg-white/80 divide-y divide-inherit backdrop-blur-md",
+        "rounded-[0.45rem] border border-slate-300/10 shadow-sm outline-none",
+        "grad_whiteOpa dark:grad_darkpurpleOpa after:grad_white2 after:dark:grad_darkpurple divide-y divide-inherit backdrop-blur-md after-dropdown",
       ])}
       data-dropdown="popup"
       aria-expanded="false"
@@ -100,6 +105,15 @@ const t = useTranslations(currentLang);
     opacity: 1 !important;
     transform: translate(0) scale(1) !important;
     visibility: visible !important;
+  }
+
+  .after-dropdown::after {
+    border-radius: 0.55rem;
+    content: "";
+    filter: blur(1px);
+    inset: 0.5px;
+    position: absolute;
+    z-index: -1;
   }
 </style>
 

@@ -1,0 +1,28 @@
+---
+import Base from "@/layout/Base.astro";
+import Body from "@/layout/Body.astro";
+import Head from "@/layout/Head.astro";
+import Projects from "@/screens/Projects.astro";
+---
+
+<Base>
+  <Head title="Emilio Tapia">
+    <style is:global>
+      #app {
+        display: grid;
+        grid-template-areas:
+          "header"
+          "main"
+          "footer";
+        grid-template-rows: auto 1fr auto;
+        /* scroll-snap-type: y mandatory; */
+        /* scroll-margin-top: 5rem; */
+      }
+    </style>
+  </Head>
+  <Body>
+    <main class="[grid-area:main] relative grid">
+      <Projects />
+    </main>
+  </Body>
+</Base>
