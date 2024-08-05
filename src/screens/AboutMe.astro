@@ -10,8 +10,11 @@ import Birthday from "@/components/icons/info/birthday.astro";
 import Email from "@/components/icons/info/email.astro";
 import LinkedIn from "@/components/icons/info/linkedIn.astro";
 import Location from "@/components/icons/info/location.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import BodyBoundaries from "@/layout/BodyBoundaries.astro";
 import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
 ---
 
 <BodyBoundaries width="2xl" padX={1} className="self-stretch w-full">
@@ -41,36 +44,33 @@ import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
         <div class="space-y-2">
           <span
             class="text-center font-medium text-3xl text-ligth-p dark:text-dark-p"
-            >Sobre mi</span
+            >{t("nav").about}</span
           >
           <p class="w-[min(48ch,35dvw)] text-ligth-label2 dark:text-dark-p2">
-            Permite contarte un poco de mi. Soy un profesional dedicado
-            desarrollo web/movil y diseño de interface centrado en el usuario.
-            Tengo varias más habilidades como la automatización de procesos,
-            manejo de bases de datos, producción multimedia.
+            {t("about").description}
           </p>
         </div>
         <div class="flex gap-8 flex-col">
           <div>
             <span class="font-medium text-xl text-ligth-p2 dark:text-dark-label"
-              >Estudios</span
+              >{t("about").study}</span
             >
             <p class="w-[min(48ch,35dvw)] text-ligth-label2 dark:text-dark-p2">
-              USFQ - Licenciado en producción musical.
+              {t("about").bachelor}
             </p>
             <p class="w-[min(48ch,35dvw)] text-ligth-label2 dark:text-dark-p2">
-              UDLA - Maestría en Experiencia de usuario.
+              {t("about").master}
             </p>
           </div>
           <div>
             <span class="font-medium text-xl text-ligth-p2 dark:text-dark-label"
-              >Experiencia</span
+              >{t("about").experience}</span
             >
             <p class="w-[min(48ch,35dvw)] text-ligth-label2 dark:text-dark-p2">
-              Comtelec - Jefe de marketing/diseño.
+              {t("about").job1}
             </p>
             <p class="w-[min(48ch,35dvw)] text-ligth-label2 dark:text-dark-p2">
-              Comtelec - Coordinador de procesos.
+              {t("about").job2}
             </p>
           </div>
           <a href="/projects">
@@ -78,7 +78,8 @@ import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
               class="rounded-[1.35rem] px-5 border border-solid buttonbehavior"
             >
               <div class="flex items-center mr-[0.8rem] ml-[0.1rem]">
-                <ButtonChevronRight /> Proyectos
+                <ButtonChevronRight />
+                {t("nav").project}
               </div>
             </button>
           </a>

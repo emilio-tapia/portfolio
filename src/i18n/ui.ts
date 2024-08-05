@@ -26,9 +26,23 @@ export const ui = {
       uiux: "UI/UX",
       cta: "Conoce más",
     },
-    menu: {
+    project: {
+      description:
+        "Mi experiencia en diseño y desarrollo comprende desde la creación de páginas o aplicaciones web, pasando por la implementación de sistemas de diseño completos, hasta la automatización BPM con el objetivo de mejorar la productividad operativa y brindar una experiencia de usuario coherente y accesible.",
+      catch1: "Cada proyecto es una nueva oportunidad...",
+      catch2: "Para aprender nuevas tecnologías y metodologías.",
+    },
+    about: {
       study: "Estudios",
       experience: "Experiencia",
+      description:
+        "Permíteme contarte un poco sobre mí. Soy un profesional dedicado al desarrollo front-end/back-end. Mi experiencia abarca una amplia gama de habilidades, incluyendo el diseño UI/UX, la automatización de procesos, el manejo de bases de datos, y la producción multimedia. Me gustan los retos y aprender nuevas tecnologías.",
+      bachelor: "USFQ - Licenciado en Producción Musical",
+      master: "UDLA - Maestría en Experiencia de usuario",
+      job1: "Comtelec - Jefe de marketing/diseño.",
+      job2: "Comtelec - Coordinador de procesos.",
+    },
+    menu: {
       skill: "Habilidades",
       miniproject: "Miniproyectos",
 
@@ -181,9 +195,23 @@ export const ui = {
       uiux: "UI/UX",
       cta: "Click here",
     },
-    menu: {
+    project: {
+      description:
+        "My experience in design and development ranges from the creation of web pages or applications, through the implementation of complete design systems, to BPM automation with the aim of improving operational productivity and providing a coherent and accessible user experience.",
+      catch1: "Every project is a new opportunity...",
+      catch2: "To learn new technologies and methodologies.",
+    },
+    about: {
       study: "Studies",
       experience: "Experience",
+      description:
+        "Let me tell you a little about myself. I am a professional dedicated to front-end/back-end development. My experience spans a wide range of skills, including UI/UX design, process automation, database management, and multimedia production. I like challenges and learning new technologies.",
+      bachelor: "USFQ - Bachelor of Music Production",
+      master: "UDLA - Master in User Experience",
+      job1: "Comtelec - Head of Marketing/Design",
+      job2: "Comtelec - Processes coordinator",
+    },
+    menu: {
       skill: "Skills",
       miniproject: "Miniprojects",
 
@@ -345,9 +373,23 @@ export const ui = {
       uiux: "UI/UX",
       cta: "Cliquez ici",
     },
-    menu: {
+    project: {
+      description:
+        "Mon expérience en conception et développement s'étend de la création de pages web ou d'applications, en passant par la mise en place de systèmes de conception complets, jusqu'à l'automatisation du BPM dans le but d'améliorer la productivité opérationnelle et d'offrir une expérience utilisateur cohérente et accessible.",
+      catch1: "Chaque projet est une nouvelle opportunité...",
+      catch2: "Apprendre de nouvelles technologies et méthodologies.",
+    },
+    about: {
       study: "Études",
       experience: "Expérience",
+      description:
+        "Laissez-moi vous parler un peu de moi-même. Je suis un professionnel dédié au développement front-end/back-end. Mon expérience couvre un large éventail de compétences, notamment la conception UI/UX, l'automatisation des processus, la gestion de bases de données et la production multimédia. J'aime les défis et apprendre de nouvelles technologies.",
+      bachelor: "USFQ - Baccalauréat en production musicale",
+      master: "UDLA - Master in User Experience",
+      job1: "Comtelec - Responsable marketing/conception",
+      job2: "Comtelec - Coordinateur des processus",
+    },
+    menu: {
       skill: "Compétences",
 
       miniproject: "Miniprojets",
