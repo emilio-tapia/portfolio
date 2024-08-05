@@ -27,7 +27,6 @@
     background: linear-gradient(260.85deg, #055872 6.94%, #104e96 100%);
   }
 
-
   .grad_dark-gb3 {
     background: linear-gradient(
       260.85deg,
@@ -61,7 +60,17 @@
       rgba(214, 214, 214, 0.64) 100%
     );
   }
-  
+
+  .grad_white2 {
+    background: linear-gradient(
+      270deg,
+      hsl(247deg 9% 88% / 90%),
+      hsl(250deg 8% 90% / 84%) 33%,
+      hsl(240deg 13% 91% / 86%) 66%,
+      hsl(240deg 20% 92% / 90%)
+    );
+  }
+
   .grad_whiteDarkT {
     background: linear-gradient(
       270deg,
@@ -80,6 +89,15 @@
       hsl(197deg 33% 25% / 50%) 33%,
       hsl(202deg 43% 24% / 50%) 66%,
       hsl(209deg 37% 27% / 50%)
+    );
+  }
+  .grad_darkpurple {
+    background: linear-gradient(
+      270deg,
+      rgb(86 84 101 / 99%),
+      rgb(75 73 85 / 99%) 33%,
+      rgb(70 68 88 / 99%) 66%,
+      rgb(67 70 94 / 99%)
     );
   }
   .grad_darkpurpleOpa {
@@ -161,6 +179,7 @@
       hsl(280 50% 95% / 1);
   }
 
+  /* USED CONTACT DARK FORM LINKS */
   .grad_whitePink {
     background: linear-gradient(
       270deg,
@@ -168,6 +187,28 @@
       hsl(247 23% 82% / 1) 33%,
       hsl(252 31% 83% / 1) 66%,
       hsl(269 33% 88% / 1)
+    );
+  }
+
+  /* USED IN DARK NAVIGATION PAGE */
+  .grad_onlyPink {
+    background: linear-gradient(
+      270deg,
+      hsl(240 23% 73% / 1),
+      hsl(246 43% 77% / 1) 33%,
+      hsl(240 43% 80% / 1) 66%,
+      hsl(240 73% 85% / 1)
+    );
+  }
+
+  /* USED DARK HERO */
+  .grad_yellowPink {
+    background: linear-gradient(
+      270deg,
+      hsl(51 36% 51% / 1),
+      hsl(40 14% 52% / 1) 11%,
+      hsl(240 46% 74% / 1) 86%,
+      hsl(219 18% 43% / 1)
     );
   }
 

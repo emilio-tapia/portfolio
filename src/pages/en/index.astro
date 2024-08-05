@@ -2,7 +2,6 @@
 import Base from "@/layout/Base.astro";
 import Body from "@/layout/Body.astro";
 import Head from "@/layout/Head.astro";
-import Hero from "@/layout/home/Hero.astro";
 import AboutMe from "@/layout/home/AboutMe.astro";
 import InfoSection from "../layout/home/InfoSection.astro";
 import LinksNavigation from "@/layout/home/LinksNavigation.astro";
@@ -11,11 +10,14 @@ import ExperienceSection from "@/layout/home/ExperienceSection.astro";
 import SkillSection from "@/layout/home/SkillSection.astro";
 import ProjectsSection from "@/layout/home/ProjectsSection.astro";
 import ProgrammingSection from "@/layout/home/ProgrammingSection.astro";
+import BlobHero from "@/components/shapes/blobs/BlobHero.astro";
+import BlobElement1 from "@/components/shapes/blobs/BlobElement_1.astro";
+import Hero from "@/screens/Hero.astro";
 ---
 
 <Base>
   <Head title="Emilio Tapia">
-    <style>
+    <style is:global>
       #app {
         display: grid;
         grid-template-areas:
@@ -23,18 +25,25 @@ import ProgrammingSection from "@/layout/home/ProgrammingSection.astro";
           "main"
           "footer";
         grid-template-rows: auto 1fr auto;
+        /* scroll-snap-type: y mandatory; */
+        /* scroll-margin-top: 5rem; */
       }
     </style>
   </Head>
   <Body>
-    <Hero />
-    <LinksNavigation />
-    <AboutMe />
-    <StudySection />
-    <ExperienceSection />
-    <SkillSection />
-    <ProgrammingSection />
-    <ProjectsSection />
+    <main class="[grid-area:main] relative grid overflow-hidden">
+      <BlobHero />
+      <BlobElement1 />
+      <Hero />
+    </main>
+    <!-- <Hero /> -->
+    <!-- <div class="hidden md:block"><LinksNavigation /></div> -->
+    <!-- <AboutMe /> -->
+    <!-- <StudySection /> -->
+    <!-- <ExperienceSection /> -->
+    <!-- <SkillSection /> -->
+    <!-- <ProgrammingSection /> -->
+    <!-- <ProjectsSection /> -->
     <!-- <InfoSection /> -->
   </Body>
 </Base>

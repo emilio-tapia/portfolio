@@ -1,17 +1,21 @@
 ---
-import ButtonChevronDown from "@/components/icons/arrows/ButtonChevronDown.astro";
 import Pill1 from "@/components/icons/decoration/Pill1.astro";
 import Pill2 from "@/components/icons/decoration/Pill2.astro";
 import Shape1 from "@/components/icons/decoration/Shape1.astro";
 import Triangle1 from "@/components/icons/decoration/Triangle1.astro";
 import Zigzag from "@/components/icons/decoration/Zigzag.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import BodyBoundaries from "@/layout/BodyBoundaries.astro";
 import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
 ---
 
 <BodyBoundaries width="2xl" padX={1} className="self-stretch w-full">
-  <section class="grid grid-cols-[1fr_1fr] h-full gap-[2dvw]">
-    <ComponentBoundaries className="py-0 mr-auto w-full">
+  <section
+    class="grid max-lg:grid-rows-[1fr_1fr] lg:grid-cols-[1fr_1fr] h-full gap-[2dvw]"
+  >
+    <ComponentBoundaries className="py-0 mr-auto w-full ">
       <div
         class="p-12 bg-slate-700 w-[90%] h-full self-end rounded-[2.2rem] relative"
       >
@@ -20,7 +24,7 @@ import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
         >
           <img
             src="/images/hero2_hd.webp"
-            alt=""
+            alt="Emilio Tapia Picture"
             srcset=""
             class="object-cover h-full w-full"
           />
@@ -42,30 +46,34 @@ import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
         />
       </div>
     </ComponentBoundaries>
-    <ComponentBoundaries className="py-0 relative w-[max(70%,30rem)] ml-auto">
-      <div class="p-12 shape-2 shape-theme-navigation shape-after w-full">
+    <ComponentBoundaries
+      className="py-0 relative w-full lg:w-[max(70%,30rem)] ml-auto"
+    >
+      <div
+        class="p-12 rounded-[2.2rem] lg:shape-2 shape-theme-navigation shape-after w-full"
+      >
         <div class="grid [grid-template-rows:_auto_1fr]
       h-[88%]">
           <span class="text-ligth-label text-right font-medium text-lg"
             >Navegación</span
           >
           <div
-            class="*:font-semibold mt-4 *:block child:w-fit *:text-gradient child:ml-auto *:grad_ligth-gb child:pb-1 child:-mt-1"
+            class="*:font-semibold lg:mt-4 *:block child:w-fit *:text-gradient child:ml-auto *:grad_ligth-gb *:dark:grad_onlyPink *:text-gradient *:dark:text-gradient child:pb-1 child:-mt-1"
           >
             <a href="/about-me" class="*:gradient-setup"
-              ><h2 class="text-7xl">Sobre mi</h2></a
+              ><h2 class="text-7xl">{t("nav").about}</h2></a
             >
             <a href="/projects" class="*:gradient-setup"
-              ><h2 class="text-7xl">Proyectos</h2></a
+              ><h2 class="text-7xl">{t("nav").project}</h2></a
             >
             <a href="/contact" class="*:gradient-setup"
-              ><h2 class="text-7xl">Contacto</h2></a
+              ><h2 class="text-7xl">{t("nav").contact}</h2></a
             >
             <a
               href="#"
               aria-disabled="true"
               class="relative cursor-not-allowed saturate-50 opacity-50"
-              ><h2 class="text-7xl">Blog</h2>
+              ><h2 class="text-7xl">{t("nav").blog}</h2>
             </a>
           </div>
         </div>
@@ -81,7 +89,7 @@ import ComponentBoundaries from "@/layout/ComponentBoundaries.astro";
       </div> -->
       </div>
       <div
-        class="text-ligth-label absolute bottom-0 left-0 -translate-x-1/4 text-end max-w-[15ch] w-full"
+        class="text-ligth-label absolute top-4 lg:top-[unset] lg:bottom-0 left-0 translate-x-1/3 lg:-translate-x-1/4 text-start lg:text-end max-w-[15ch] w-full"
       >
         <span class="font-semibold block text-lg">Bienvenido.</span>
         <span class="block mt-1">Entra en la pagina que deseas.</span>

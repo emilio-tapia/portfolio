@@ -4,6 +4,17 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      screens: {
+        xsss: "0px", //0 to 160px
+        xss: "160px", //160 to 320
+        xs: "320px", //320 to 640
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        smm: "200px",
+        height_login: { raw: "(max-height: 260px)" },
+      },
       fontFamily: {
         // sfpro: ["SF Pro Text", "system-ui", "sans-serif"],
         // oswald: ["Oswald", "system-ui", "sans-serif"],
